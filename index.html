@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Yousaf Anwar Ali — Dev Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --lime:#c8f542;
+  --bg:#0b0b0b;
+  --bg2:#111;
+  --bg3:#161616;
+  --text:#e2e2e2;
+  --muted:#666;
+  --faint:#2a2a2a;
+  --border:rgba(255,255,255,0.07);
+}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+@keyframes slideIn{from{opacity:0;transform:translateX(40px)}to{opacity:1;transform:translateX(0)}}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.reveal.show{opacity:1;transform:none}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:18px 6%;
+  background:rgba(11,11,11,0.9);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+}
+.logo{font-family:'Space Mono',monospace;font-size:.8rem;color:var(--lime);letter-spacing:.15em;cursor:pointer}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);transition:color .2s}
+.nav-links a:hover{color:var(--lime)}
+.nav-back{display:none;align-items:center;gap:.5rem;font-family:'Space Mono',monospace;font-size:.68rem;color:var(--muted);letter-spacing:.1em;cursor:pointer;transition:color .2s;text-transform:uppercase}
+.nav-back:hover{color:var(--lime)}
+.nav-back svg{transition:transform .2s}
+.nav-back:hover svg{transform:translateX(-3px)}
+
+/* ── MAIN PORTFOLIO ── */
+#portfolio-view{transition:opacity .35s ease}
+#portfolio-view.hiding{opacity:0;pointer-events:none}
+
+/* HERO */
+.hero{
+  min-height:100vh;display:flex;flex-direction:column;justify-content:center;
+  padding:100px 6% 60px;position:relative;overflow:hidden;
+}
+.hero-grid{
+  position:absolute;inset:0;
+  background-image:linear-gradient(rgba(200,245,66,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(200,245,66,.025) 1px,transparent 1px);
+  background-size:56px 56px;pointer-events:none;
+}
+.hero-glow{
+  position:absolute;top:-10%;right:-5%;width:45vw;height:45vw;max-width:500px;max-height:500px;
+  background:radial-gradient(ellipse,rgba(200,245,66,.055) 0%,transparent 70%);
+  pointer-events:none;
+}
+.eyebrow{display:flex;align-items:center;gap:.7rem;font-family:'Space Mono',monospace;font-size:.68rem;color:var(--lime);letter-spacing:.2em;text-transform:uppercase;margin-bottom:1.6rem;animation:fadeUp .7s ease .1s both}
+.eyebrow-line{width:28px;height:1px;background:var(--lime);flex-shrink:0}
+.hero h1{font-size:clamp(3.2rem,9vw,7.5rem);font-weight:700;line-height:.98;letter-spacing:-.035em;margin-bottom:.3rem;animation:fadeUp .7s ease .2s both}
+.hero h1 span{color:var(--lime)}
+.hero-sub{font-family:'Space Mono',monospace;font-size:clamp(.75rem,1.5vw,1rem);color:#484848;letter-spacing:.06em;margin-bottom:2.2rem;animation:fadeUp .7s ease .3s both}
+.hero-bio{max-width:500px;font-size:.95rem;line-height:1.8;color:#777;margin-bottom:3rem;animation:fadeUp .7s ease .4s both}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap;animation:fadeUp .7s ease .5s both}
+.btn-p{padding:13px 30px;background:var(--lime);color:#0b0b0b;border:none;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;font-family:'DM Sans',sans-serif;transition:transform .2s,box-shadow .2s}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(200,245,66,.28)}
+.btn-s{padding:13px 30px;background:transparent;color:var(--text);border:1px solid var(--border);font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;font-family:'DM Sans',sans-serif;transition:border-color .2s,color .2s}
+.btn-s:hover{border-color:rgba(255,255,255,.35);color:#fff}
+.hero-badge{position:absolute;right:6%;bottom:14%;text-align:right}
+.badge-num{font-family:'Space Mono',monospace;font-size:clamp(2.8rem,6vw,5.5rem);font-weight:700;color:rgba(200,245,66,.08);line-height:1}
+.badge-lbl{font-size:.62rem;color:#333;letter-spacing:.18em;text-transform:uppercase}
+
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(200,245,66,.15),transparent)}
+
+section{padding:6rem 6%}
+.sec-label{display:flex;align-items:center;gap:.7rem;font-family:'Space Mono',monospace;font-size:.65rem;color:var(--lime);letter-spacing:.2em;text-transform:uppercase;margin-bottom:1rem}
+.sec-title{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:700;letter-spacing:-.025em;margin-bottom:3.5rem;line-height:1.1;color:var(--text)}
+
+/* SKILLS */
+.skill-tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2rem}
+.stab{padding:8px 18px;background:transparent;border:1px solid var(--border);font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;font-family:'DM Sans',sans-serif;color:var(--muted);transition:all .2s}
+.stab.active{background:var(--lime);color:#0b0b0b;border-color:var(--lime)}
+.stab:hover:not(.active){border-color:rgba(255,255,255,.2);color:#ccc}
+.skill-pills{display:flex;flex-wrap:wrap;gap:.65rem}
+.pill{padding:10px 18px;background:rgba(255,255,255,.025);border:1px solid var(--border);font-size:.82rem;color:#bbb;transition:all .2s;cursor:default}
+.pill:hover{border-color:rgba(200,245,66,.3);color:var(--lime)}
+
+/* PROJECTS */
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,440px),1fr));gap:1.5px;background:var(--faint)}
+.proj-card{background:var(--bg);padding:2.2rem;transition:background .3s;position:relative;cursor:pointer}
+.proj-card:hover{background:var(--bg2)}
+.proj-card:hover .proj-name{color:var(--lime)}
+.proj-idx{font-family:'Space Mono',monospace;font-size:.6rem;color:#333;letter-spacing:.15em;margin-bottom:1.4rem}
+.proj-name{font-size:1.1rem;font-weight:700;letter-spacing:-.01em;margin-bottom:.65rem;color:var(--text);transition:color .2s}
+.proj-desc{font-size:.83rem;color:#5a5a5a;line-height:1.75;margin-bottom:1.4rem}
+.proj-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.4rem}
+.ptag{padding:3px 9px;background:rgba(200,245,66,.07);color:var(--lime);font-size:.64rem;letter-spacing:.08em;font-family:'Space Mono',monospace}
+.proj-links{display:flex;gap:1.2rem;align-items:center}
+.plink{font-size:.68rem;color:#444;letter-spacing:.1em;text-transform:uppercase;font-family:'Space Mono',monospace;transition:color .2s;cursor:pointer}
+.plink:hover{color:var(--lime)}
+.plink-detail{font-size:.68rem;color:var(--lime);letter-spacing:.1em;text-transform:uppercase;font-family:'Space Mono',monospace;transition:opacity .2s;cursor:pointer;display:flex;align-items:center;gap:.3rem}
+.plink-detail:hover{opacity:.7}
+
+/* CONTACT */
+.contact-wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:5rem;align-items:start}
+.c-info p{font-size:.9rem;color:#555;line-height:1.8;margin-bottom:2.5rem}
+.c-item{margin-bottom:1.3rem}
+.c-lbl{font-size:.6rem;color:#393939;letter-spacing:.2em;text-transform:uppercase;font-family:'Space Mono',monospace;margin-bottom:.25rem}
+.c-val{font-size:.88rem;color:#999}
+.c-val a{color:var(--lime);transition:opacity .2s}.c-val a:hover{opacity:.7}
+.form{display:flex;flex-direction:column;gap:.85rem}
+.inp{padding:13px 15px;background:rgba(255,255,255,.025);border:1px solid var(--border);color:var(--text);font-size:.88rem;outline:none;font-family:'DM Sans',sans-serif;transition:border-color .2s}
+.inp:focus{border-color:rgba(200,245,66,.4)}
+textarea.inp{resize:vertical;min-height:115px}
+.success-box{padding:2.5rem;border:1px solid rgba(200,245,66,.2);text-align:center}
+.success-icon{font-size:1.6rem;margin-bottom:.8rem;color:var(--lime)}
+.success-label{font-family:'Space Mono',monospace;font-size:.75rem;letter-spacing:.12em;color:var(--lime)}
+.success-sub{font-size:.8rem;color:var(--muted);margin-top:.4rem}
+
+footer{padding:2rem 6%;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border)}
+.ft{font-family:'Space Mono',monospace;font-size:.65rem;color:#2e2e2e;letter-spacing:.08em}
+.fl{display:flex;gap:1.5rem}
+.fl a{font-size:.65rem;color:#3a3a3a;text-transform:uppercase;letter-spacing:.1em;font-family:'Space Mono',monospace;transition:color .2s}
+.fl a:hover{color:var(--lime)}
+
+
+/* ── PROJECT DETAIL PAGE ── */
+#project-view{
+  display:none;opacity:0;
+  transition:opacity .35s ease;
+  padding-top:80px;
+  min-height:100vh;
+}
+#project-view.visible{display:block}
+#project-view.shown{opacity:1}
+
+.proj-detail-hero{
+  padding:5rem 6% 4rem;
+  position:relative;overflow:hidden;
+  border-bottom:1px solid var(--border);
+}
+.proj-detail-grid{
+  position:absolute;inset:0;
+  background-image:linear-gradient(rgba(200,245,66,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(200,245,66,.02) 1px,transparent 1px);
+  background-size:56px 56px;pointer-events:none;
+}
+.proj-detail-glow{
+  position:absolute;top:-20%;right:-5%;width:40vw;height:40vw;max-width:420px;max-height:420px;
+  background:radial-gradient(ellipse,rgba(200,245,66,.06) 0%,transparent 70%);
+  pointer-events:none;
+}
+.proj-detail-inner{position:relative;z-index:1;max-width:900px}
+.proj-detail-eyebrow{display:flex;align-items:center;gap:.7rem;font-family:'Space Mono',monospace;font-size:.65rem;color:var(--lime);letter-spacing:.2em;text-transform:uppercase;margin-bottom:1.4rem;animation:fadeUp .6s ease .05s both}
+.proj-detail-title{font-size:clamp(2.6rem,7vw,5.5rem);font-weight:700;line-height:.97;letter-spacing:-.03em;margin-bottom:1.2rem;animation:fadeUp .6s ease .12s both}
+.proj-detail-title span{color:var(--lime)}
+.proj-detail-tagline{font-family:'Space Mono',monospace;font-size:clamp(.72rem,1.2vw,.9rem);color:#484848;letter-spacing:.06em;max-width:580px;line-height:1.7;margin-bottom:2.5rem;animation:fadeUp .6s ease .2s both}
+.proj-detail-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2.5rem;animation:fadeUp .6s ease .26s both}
+.proj-detail-actions{display:flex;gap:1rem;flex-wrap:wrap;animation:fadeUp .6s ease .32s both}
+
+.proj-detail-body{padding:5rem 6%;max-width:1100px;margin:0 auto}
+.pd-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem}
+@media(max-width:760px){.pd-grid{grid-template-columns:1fr;gap:3rem}.contact-wrap{grid-template-columns:1fr}}
+
+.pd-section-lbl{font-family:'Space Mono',monospace;font-size:.6rem;color:var(--lime);letter-spacing:.22em;text-transform:uppercase;margin-bottom:.9rem;display:flex;align-items:center;gap:.6rem}
+.pd-section-lbl::before{content:'';display:block;width:18px;height:1px;background:var(--lime)}
+.pd-section-title{font-size:1.4rem;font-weight:700;letter-spacing:-.02em;margin-bottom:1.2rem;color:var(--text)}
+.pd-text{font-size:.9rem;color:#606060;line-height:1.85}
+.pd-text + .pd-text{margin-top:.9rem}
+
+.feature-list{list-style:none;display:flex;flex-direction:column;gap:.75rem;margin-top:1rem}
+.feature-list li{display:flex;align-items:flex-start;gap:.75rem;font-size:.88rem;color:#606060;line-height:1.7}
+.feature-list li::before{content:'→';color:var(--lime);font-family:'Space Mono',monospace;font-size:.7rem;flex-shrink:0;margin-top:.18rem}
+
+.tech-stack-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:.6rem;margin-top:1rem}
+.tech-item{padding:12px 14px;border:1px solid var(--border);background:rgba(255,255,255,.02);transition:all .2s}
+.tech-item:hover{border-color:rgba(200,245,66,.3);background:rgba(200,245,66,.03)}
+.tech-item-name{font-size:.8rem;font-weight:600;color:var(--text);margin-bottom:.15rem}
+.tech-item-role{font-size:.62rem;color:#3a3a3a;font-family:'Space Mono',monospace;letter-spacing:.06em}
+
+.video-section{padding:0 6% 5rem;max-width:1100px;margin:0 auto}
+.video-wrap{position:relative;padding-bottom:53.65%;height:0;border:1px solid var(--border);overflow:hidden}
+.video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%}
+.video-label{font-family:'Space Mono',monospace;font-size:.62rem;color:var(--lime);letter-spacing:.2em;text-transform:uppercase;margin-bottom:1.2rem;display:flex;align-items:center;gap:.6rem}
+.video-label::before{content:'';display:block;width:18px;height:1px;background:var(--lime)}
+
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5px;background:var(--faint);margin:4rem 0}
+.stat-cell{background:var(--bg);padding:2rem;text-align:center}
+.stat-n{font-family:'Space Mono',monospace;font-size:2rem;font-weight:700;color:var(--lime);line-height:1}
+.stat-l{font-size:.7rem;color:#444;letter-spacing:.12em;text-transform:uppercase;margin-top:.4rem}
+
+.coming-soon-badge{display:inline-flex;align-items:center;gap:.5rem;padding:6px 14px;border:1px solid rgba(200,245,66,.2);background:rgba(200,245,66,.04);font-family:'Space Mono',monospace;font-size:.6rem;color:var(--lime);letter-spacing:.15em;text-transform:uppercase}
+
+/* SCROLLBAR */
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:#0b0b0b}::-webkit-scrollbar-thumb{background:#222}::-webkit-scrollbar-thumb:hover{background:#333}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <div class="logo" onclick="showPortfolio()">YAA.DEV</div>
+  <ul class="nav-links" id="nav-main-links">
+    <li><a href="#skills" onclick="sc('skills');return false">Skills</a></li>
+    <li><a href="#projects" onclick="sc('projects');return false">Projects</a></li>
+    <li><a href="#contact" onclick="sc('contact');return false">Contact</a></li>
+  </ul>
+  <div class="nav-back" id="nav-back" onclick="showPortfolio()">
+    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 2L4 7L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Back
+  </div>
+</nav>
+
+<!-- ════════════════════════ PORTFOLIO VIEW ════════════════════════ -->
+<div id="portfolio-view">
+
+<section class="hero" id="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div style="position:relative;z-index:1;max-width:860px">
+    <div class="eyebrow"><span class="eyebrow-line"></span>Available for Freelance</div>
+    <h1>Yousaf<br><span>Anwar</span> Ali</h1>
+    <p class="hero-sub">Backend-Focused Full Stack Developer</p>
+    <p class="hero-bio">4+ years building secure, scalable backend systems for real-world SaaS products. From microservices to production APIs — I make backends that don't break.</p>
+    <div class="hero-btns">
+      <button class="btn-p" onclick="sc('contact')">Let's Work Together</button>
+      <button class="btn-s" onclick="sc('projects')">View Projects</button>
+    </div>
+  </div>
+  <div class="hero-badge">
+    <div class="badge-num">4+</div>
+    <div class="badge-lbl">Years Experience</div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="skills">
+  <div class="reveal">
+    <div class="sec-label"><span class="eyebrow-line"></span>Expertise</div>
+    <h2 class="sec-title">What I Work With</h2>
+  </div>
+  <div class="reveal" style="transition-delay:.1s">
+    <div class="skill-tabs" id="stabs"></div>
+    <div class="skill-pills" id="spills"></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<section id="projects" style="padding-left:0;padding-right:0">
+  <div style="padding:0 6% 3.5rem" class="reveal">
+    <div class="sec-label"><span class="eyebrow-line"></span>Work</div>
+    <h2 class="sec-title">Selected Projects</h2>
+  </div>
+  <div class="proj-grid" id="pgrid"></div>
+</section>
+
+<div class="divider"></div>
+
+<section id="contact" style="background:rgba(255,255,255,.012);border-top:1px solid var(--border);border-bottom:1px solid var(--border)">
+  <div class="reveal">
+    <div class="sec-label"><span class="eyebrow-line"></span>Contact</div>
+    <h2 class="sec-title">Let's Build Something</h2>
+  </div>
+  <div class="contact-wrap reveal" style="transition-delay:.12s">
+    <div class="c-info">
+      <p>Open to freelance projects, remote opportunities, and interesting collaborations. Drop a message and I'll get back to you within 24 hours.</p>
+      <div class="c-item"><div class="c-lbl">Email</div><div class="c-val">yousafanwar7777@gmail.com</div></div>
+      <div class="c-item"><div class="c-lbl">Location</div><div class="c-val">Lahore, Pakistan</div></div>
+      <div class="c-item"><div class="c-lbl">GitHub</div><div class="c-val"><a href="https://github.com/yousafanwar" target="_blank">github.com/yousafanwar</a></div></div>
+      <div class="c-item"><div class="c-lbl">LinkedIn</div><div class="c-val"><a href="https://www.linkedin.com/in/yousafanwar-ali-341195301/" target="_blank">linkedin.com/in/yousafanwar-ali</a></div></div>
+    </div>
+    <div id="form-wrap">
+      <form class="form" id="cf" onsubmit="submitForm(event)">
+        <input class="inp" placeholder="Your Name" required />
+        <input class="inp" type="email" placeholder="Email Address" required />
+        <textarea class="inp" placeholder="Tell me about your project..." required></textarea>
+        <button type="submit" class="btn-p" style="align-self:flex-start">Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span class="ft">© 2026 — Yousaf Anwar Ali</span>
+  <div class="fl">
+    <a href="https://github.com/yousafanwar" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/yousafanwar-ali-341195301/" target="_blank">LinkedIn</a>
+  </div>
+</footer>
+
+</div><!-- /portfolio-view -->
+
+
+<!-- ════════════════════════ PROJECT DETAIL VIEW ════════════════════════ -->
+<div id="project-view">
+
+  <!-- AuthForge detail page -->
+  <div id="detail-authforge">
+
+    <div class="proj-detail-hero">
+      <div class="proj-detail-grid"></div>
+      <div class="proj-detail-glow"></div>
+      <div class="proj-detail-inner">
+        <div class="proj-detail-eyebrow"><span class="eyebrow-line"></span>Project — 03 / AuthForge API</div>
+        <h1 class="proj-detail-title">Auth<span>Forge</span><br>API</h1>
+        <p class="proj-detail-tagline">Production-grade authentication API built with NestJS and Prisma. JWT access & refresh tokens, role-based access control, and full test coverage — built to plug into any SaaS.</p>
+        <div class="proj-detail-tags">
+          <span class="ptag">NestJS</span>
+          <span class="ptag">TypeScript</span>
+          <span class="ptag">Prisma</span>
+          <span class="ptag">PostgreSQL</span>
+          <span class="ptag">JWT</span>
+          <span class="ptag">RBAC</span>
+        </div>
+        <div class="proj-detail-actions">
+          <a href="https://github.com/yousafanwar/AuthForge-API" target="_blank" class="btn-p">View on GitHub</a>
+          <button class="btn-s" onclick="document.getElementById('demo-video').scrollIntoView({behavior:'smooth'})">Watch Demo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats bar -->
+    <div class="stat-row" style="margin:0">
+      <div class="stat-cell"><div class="stat-n">100%</div><div class="stat-l">Test Coverage</div></div>
+      <div class="stat-cell"><div class="stat-n">3</div><div class="stat-l">Token Strategies</div></div>
+      <div class="stat-cell"><div class="stat-n">RBAC</div><div class="stat-l">Permission System</div></div>
+    </div>
+
+    <div class="proj-detail-body">
+      <div class="pd-grid">
+
+        <!-- Left column -->
+        <div>
+          <div class="pd-section-lbl">Overview</div>
+          <h3 class="pd-section-title">What is AuthForge?</h3>
+          <p class="pd-text">AuthForge is a production-ready authentication microservice designed to be dropped into any Node.js / NestJS project. It handles all the auth complexity so you can focus on your actual product.</p>
+          <p class="pd-text">Built with security-first principles — short-lived access tokens, rotating refresh tokens, and a full RBAC system that controls what each user role can and can't touch.</p>
+
+          <div style="margin-top:2.5rem">
+            <div class="pd-section-lbl">Key Features</div>
+            <ul class="feature-list">
+              <li>JWT access tokens with configurable expiry and payload</li>
+              <li>Rotating refresh tokens with invalidation on reuse (RTR strategy)</li>
+              <li>Role-Based Access Control with guard decorators</li>
+              <li>Prisma ORM with PostgreSQL — fully typed database layer</li>
+              <li>E2E and unit tests with Jest — 100% critical path coverage</li>
+              <li>Modular NestJS architecture, easy to extend or integrate</li>
+              <li>Helmet, rate limiting, and input validation baked in</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Right column -->
+        <div>
+          <div class="pd-section-lbl">Technical Decisions</div>
+          <h3 class="pd-section-title">Why These Choices?</h3>
+          <p class="pd-text">NestJS was chosen for its opinionated module system — it forces a clean separation of concerns that scales well as the API grows. The decorator-based guards make RBAC a one-liner at the route level.</p>
+          <p class="pd-text">Prisma over raw SQL or other ORMs because the generated TypeScript client eliminates an entire class of runtime bugs. Schema migrations are version-controlled and repeatable.</p>
+          <p class="pd-text">The refresh token rotation strategy (RTR) detects token theft: if a stolen refresh token is used, the entire token family is invalidated immediately.</p>
+
+          <div style="margin-top:2.5rem">
+            <div class="pd-section-lbl">Tech Stack</div>
+            <div class="tech-stack-grid">
+              <div class="tech-item"><div class="tech-item-name">NestJS</div><div class="tech-item-role">Framework</div></div>
+              <div class="tech-item"><div class="tech-item-name">TypeScript</div><div class="tech-item-role">Language</div></div>
+              <div class="tech-item"><div class="tech-item-name">Prisma</div><div class="tech-item-role">ORM</div></div>
+              <div class="tech-item"><div class="tech-item-name">PostgreSQL</div><div class="tech-item-role">Database</div></div>
+              <div class="tech-item"><div class="tech-item-name">JWT</div><div class="tech-item-role">Auth Tokens</div></div>
+              <div class="tech-item"><div class="tech-item-name">Jest</div><div class="tech-item-role">Testing</div></div>
+              <div class="tech-item"><div class="tech-item-name">Docker</div><div class="tech-item-role">Dev Env</div></div>
+              <div class="tech-item"><div class="tech-item-name">Passport</div><div class="tech-item-role">Strategies</div></div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /pd-grid -->
+    </div><!-- /proj-detail-body -->
+
+    <!-- Demo Video -->
+    <div class="video-section" id="demo-video">
+      <div class="video-label">Demo Video</div>
+      <div class="video-wrap">
+        <iframe src="https://www.loom.com/embed/9d04adce0c3044dea08c59f530ff89bc" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      </div>
+    </div>
+
+    <!-- Bottom nav -->
+    <div style="padding:3rem 6%;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem">
+      <button class="btn-s" onclick="showPortfolio()">← Back to Projects</button>
+      <a href="https://github.com/yousafanwar/AuthForge-API" target="_blank" class="btn-p">View Source on GitHub</a>
+    </div>
+
+    <footer>
+      <span class="ft">© 2026 — Yousaf Anwar Ali</span>
+      <div class="fl">
+        <a href="https://github.com/yousafanwar" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/yousafanwar-ali-341195301/" target="_blank">LinkedIn</a>
+      </div>
+    </footer>
+
+  </div><!-- /detail-authforge -->
+
+  <!-- ─── ChatApp 2.0 detail page ─── -->
+  <div id="detail-chatapp">
+
+    <div class="proj-detail-hero">
+      <div class="proj-detail-grid"></div>
+      <div class="proj-detail-glow"></div>
+      <div class="proj-detail-inner">
+        <div class="proj-detail-eyebrow"><span class="eyebrow-line"></span>Project — 02 / ChatApp 2.0</div>
+        <h1 class="proj-detail-title">Chat<span>App</span><br>2.0</h1>
+        <p class="proj-detail-tagline">Full-stack real-time messaging with a microservices backbone — auth, user, and chat as independent services, stitched together with Socket.IO and Docker Compose.</p>
+        <div class="proj-detail-tags">
+          <span class="ptag">React</span>
+          <span class="ptag">TypeScript</span>
+          <span class="ptag">Node.js</span>
+          <span class="ptag">Socket.IO</span>
+          <span class="ptag">MongoDB</span>
+          <span class="ptag">Docker</span>
+          <span class="ptag">Microservices</span>
+        </div>
+        <div class="proj-detail-actions">
+          <a href="https://github.com/yousafanwar/ChatApp2.0" target="_blank" class="btn-p">View on GitHub</a>
+          <div class="coming-soon-badge">
+            <svg width="8" height="8" viewBox="0 0 8 8" fill="none"><circle cx="4" cy="4" r="3" stroke="currentColor" stroke-width="1.2"/><path d="M4 2.5v1.75L5 5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/></svg>
+            Live Demo — Coming Soon
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats bar -->
+    <div class="stat-row" style="margin:0">
+      <div class="stat-cell"><div class="stat-n">3</div><div class="stat-l">Microservices</div></div>
+      <div class="stat-cell"><div class="stat-n">RT</div><div class="stat-l">Real-Time Messaging</div></div>
+      <div class="stat-cell"><div class="stat-n">Docker</div><div class="stat-l">Containerised</div></div>
+    </div>
+
+    <div class="proj-detail-body">
+      <div class="pd-grid">
+
+        <!-- Left -->
+        <div>
+          <div class="pd-section-lbl">Overview</div>
+          <h3 class="pd-section-title">What is ChatApp 2.0?</h3>
+          <p class="pd-text">ChatApp 2.0 is a full-stack real-time messaging application built around a microservices architecture. Instead of a single monolithic server, three independent Node.js services handle auth, user management, and chat — each with its own MongoDB database and Docker container.</p>
+          <p class="pd-text">The frontend is a React + TypeScript SPA that connects to the chat service via Socket.IO for live message delivery, while REST calls handle everything else through a Vite proxy in development and a configurable base URL in production.</p>
+
+          <div style="margin-top:2.5rem">
+            <div class="pd-section-lbl">Features</div>
+            <ul class="feature-list">
+              <li>1:1 real-time messaging and group chat via Socket.IO</li>
+              <li>JWT-based auth with access + refresh token flow</li>
+              <li>Contact management — add, search, and view user profiles</li>
+              <li>Group creation and member management</li>
+              <li>Profile updates — name, email, and avatar</li>
+              <li>Image and video message attachments</li>
+              <li>Protected routes on the frontend with auth middleware</li>
+              <li>One-command spin-up with Docker Compose</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Right -->
+        <div>
+          <div class="pd-section-lbl">Architecture</div>
+          <h3 class="pd-section-title">How It's Structured</h3>
+          <p class="pd-text">Each service runs in isolation — the auth service owns JWT signing and verification, the user service handles profiles and contacts, and the chat service manages Socket.IO connections and message persistence. Cross-service calls are HTTP (e.g. chat service resolves sender details from user service).</p>
+          <p class="pd-text">This separation means each piece can be scaled, deployed, or swapped independently — a meaningful difference from a monolith, even at this scale.</p>
+
+          <!-- Services diagram -->
+          <div style="margin-top:2rem;border:1px solid var(--border);padding:1.6rem;background:rgba(255,255,255,.015)">
+            <div style="font-family:'Space Mono',monospace;font-size:.6rem;color:#333;letter-spacing:.15em;margin-bottom:1.2rem;text-transform:uppercase">Service Map</div>
+            <div style="display:flex;flex-direction:column;gap:.7rem">
+              <div style="display:flex;align-items:center;gap:1rem">
+                <div style="width:10px;height:10px;background:var(--lime);flex-shrink:0"></div>
+                <div style="font-size:.8rem;color:#888">Frontend <span style="color:#333;font-family:'Space Mono',monospace;font-size:.68rem">:5173</span> — React + Vite + Socket.IO client</div>
+              </div>
+              <div style="display:flex;align-items:center;gap:1rem">
+                <div style="width:10px;height:10px;border:1px solid rgba(200,245,66,.4);flex-shrink:0"></div>
+                <div style="font-size:.8rem;color:#888">Chat Service <span style="color:#333;font-family:'Space Mono',monospace;font-size:.68rem">:5000</span> — Socket.IO + message APIs</div>
+              </div>
+              <div style="display:flex;align-items:center;gap:1rem">
+                <div style="width:10px;height:10px;border:1px solid rgba(200,245,66,.4);flex-shrink:0"></div>
+                <div style="font-size:.8rem;color:#888">User Service <span style="color:#333;font-family:'Space Mono',monospace;font-size:.68rem">:5001</span> — profiles, contacts, groups</div>
+              </div>
+              <div style="display:flex;align-items:center;gap:1rem">
+                <div style="width:10px;height:10px;border:1px solid rgba(200,245,66,.4);flex-shrink:0"></div>
+                <div style="font-size:.8rem;color:#888">Auth Service <span style="color:#333;font-family:'Space Mono',monospace;font-size:.68rem">:5002</span> — register, login, token flow</div>
+              </div>
+              <div style="display:flex;align-items:center;gap:1rem">
+                <div style="width:10px;height:10px;border:1px solid #222;flex-shrink:0"></div>
+                <div style="font-size:.8rem;color:#888">MongoDB <span style="color:#333;font-family:'Space Mono',monospace;font-size:.68rem">:27017</span> — separate DB per service (Docker network)</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:2.5rem">
+            <div class="pd-section-lbl">Tech Stack</div>
+            <div class="tech-stack-grid">
+              <div class="tech-item"><div class="tech-item-name">React</div><div class="tech-item-role">Frontend</div></div>
+              <div class="tech-item"><div class="tech-item-name">TypeScript</div><div class="tech-item-role">Language</div></div>
+              <div class="tech-item"><div class="tech-item-name">Vite</div><div class="tech-item-role">Build Tool</div></div>
+              <div class="tech-item"><div class="tech-item-name">Socket.IO</div><div class="tech-item-role">Real-Time</div></div>
+              <div class="tech-item"><div class="tech-item-name">Node.js</div><div class="tech-item-role">Runtime</div></div>
+              <div class="tech-item"><div class="tech-item-name">Express</div><div class="tech-item-role">HTTP Layer</div></div>
+              <div class="tech-item"><div class="tech-item-name">MongoDB</div><div class="tech-item-role">Database</div></div>
+              <div class="tech-item"><div class="tech-item-name">Docker</div><div class="tech-item-role">Containers</div></div>
+              <div class="tech-item"><div class="tech-item-name">JWT</div><div class="tech-item-role">Auth Tokens</div></div>
+              <div class="tech-item"><div class="tech-item-name">Tailwind</div><div class="tech-item-role">Styling</div></div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /pd-grid -->
+    </div><!-- /proj-detail-body -->
+
+    <!-- Demo placeholder -->
+    <div class="video-section">
+      <div class="video-label">Demo Video</div>
+      <div style="border:1px solid var(--border);padding:4rem 2rem;text-align:center;background:rgba(255,255,255,.012)">
+        <div style="font-family:'Space Mono',monospace;font-size:2rem;color:rgba(200,245,66,.12);margin-bottom:1.2rem">◷</div>
+        <div class="coming-soon-badge" style="margin:0 auto">Live Demo — Available in a few days</div>
+        <p style="font-size:.8rem;color:#3a3a3a;margin-top:1rem;font-family:'Space Mono',monospace;letter-spacing:.06em">Check back soon or star the repo to follow progress</p>
+        <a href="https://github.com/yousafanwar/ChatApp2.0" target="_blank" style="display:inline-block;margin-top:1.5rem;font-size:.68rem;color:var(--lime);font-family:'Space Mono',monospace;letter-spacing:.1em;text-transform:uppercase;transition:opacity .2s" onmouseover="this.style.opacity='.6'" onmouseout="this.style.opacity='1'">GitHub Repo →</a>
+      </div>
+    </div>
+
+    <!-- Bottom nav -->
+    <div style="padding:3rem 6%;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem">
+      <button class="btn-s" onclick="showPortfolio()">← Back to Projects</button>
+      <a href="https://github.com/yousafanwar/ChatApp2.0" target="_blank" class="btn-p">View Source on GitHub</a>
+    </div>
+
+    <footer>
+      <span class="ft">© 2026 — Yousaf Anwar Ali</span>
+      <div class="fl">
+        <a href="https://github.com/yousafanwar" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/yousafanwar-ali-341195301/" target="_blank">LinkedIn</a>
+      </div>
+    </footer>
+
+  </div><!-- /detail-chatapp -->
+
+  <!-- ─── ECP — Bird Buzz detail page ─── -->
+  <div id="detail-ecp">
+
+    <div class="proj-detail-hero">
+      <div class="proj-detail-grid"></div>
+      <div class="proj-detail-glow"></div>
+      <div class="proj-detail-inner">
+        <div class="proj-detail-eyebrow"><span class="eyebrow-line"></span>Project — 01 / ECP — Bird Buzz</div>
+        <h1 class="proj-detail-title">Bird<span>Buzz</span><br>Store</h1>
+        <p class="proj-detail-tagline">A full-stack e-commerce platform for bird supplies — product catalog, filtering, cart, checkout, and JWT-authenticated accounts. Built as a monorepo with NestJS on the backend and Next.js on the frontend, live on Vercel.</p>
+        <div class="proj-detail-tags">
+          <span class="ptag">NestJS</span>
+          <span class="ptag">Next.js</span>
+          <span class="ptag">TypeScript</span>
+          <span class="ptag">PostgreSQL</span>
+          <span class="ptag">Tailwind CSS</span>
+          <span class="ptag">Cloudinary</span>
+          <span class="ptag">JWT</span>
+        </div>
+        <div class="proj-detail-actions">
+          <a href="https://ecp-six.vercel.app" target="_blank" class="btn-p">View Live Site</a>
+          <div class="coming-soon-badge">
+            <svg width="8" height="8" viewBox="0 0 8 8" fill="none"><rect x="1" y="2.5" width="6" height="4.5" rx=".5" stroke="currentColor" stroke-width="1.1"/><path d="M2.5 2.5V2a1.5 1.5 0 013 0v.5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/></svg>
+            Private — Client Project
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats bar -->
+    <div class="stat-row" style="margin:0">
+      <div class="stat-cell"><div class="stat-n">2</div><div class="stat-l">Services (Monorepo)</div></div>
+      <div class="stat-cell"><div class="stat-n">Live</div><div class="stat-l">Deployed on Vercel</div></div>
+      <div class="stat-cell"><div class="stat-n">Full</div><div class="stat-l">Auth + Cart + Orders</div></div>
+    </div>
+
+    <div class="proj-detail-body">
+      <div class="pd-grid">
+
+        <!-- Left -->
+        <div>
+          <div class="pd-section-lbl">Overview</div>
+          <h3 class="pd-section-title">What is ECP Bird Buzz?</h3>
+          <p class="pd-text">ECP is a full-stack e-commerce application for bird products — from feed to accessories. It covers the complete shopping journey: browsing a product catalog with filters, adding items to cart, authenticating, and placing orders.</p>
+          <p class="pd-text">The project is structured as a monorepo with two services: a NestJS backend that handles auth, products, cart, orders, and payment flows; and a Next.js (App Router) storefront that consumes the API and renders a fast, SEO-friendly UI.</p>
+          <p class="pd-text">Product images are managed through Cloudinary, giving the storefront optimized delivery and transformation out of the box. The whole thing is live on Vercel.</p>
+
+          <div style="margin-top:2.5rem">
+            <div class="pd-section-lbl">Features</div>
+            <ul class="feature-list">
+              <li>Product catalog with category filtering and search</li>
+              <li>Shopping cart — add, update quantity, remove items</li>
+              <li>JWT-based authentication with access + refresh token flow</li>
+              <li>Order management and payment flow handling</li>
+              <li>Cloudinary image uploads with CDN delivery</li>
+              <li>Next.js App Router for SSR and fast page loads</li>
+              <li>Fully responsive Tailwind CSS storefront UI</li>
+              <li>PostgreSQL with NestJS typed ORM layer</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Right -->
+        <div>
+          <div class="pd-section-lbl">Architecture</div>
+          <h3 class="pd-section-title">Monorepo Structure</h3>
+          <p class="pd-text">Backend and frontend live side-by-side in a single repo, keeping shared types and deployment config in one place. Each service is independently runnable in development and independently deployable in production.</p>
+          <p class="pd-text">The NestJS backend exposes a REST API that the Next.js frontend consumes via <code style="font-family:'Space Mono',monospace;font-size:.78rem;color:var(--lime);background:rgba(200,245,66,.06);padding:1px 5px">NEXT_PUBLIC_API_URL</code>. In local dev the Next.js server proxies requests; in production the frontend hits the deployed backend URL directly.</p>
+
+          <!-- Monorepo map -->
+          <div style="margin-top:1.8rem;border:1px solid var(--border);padding:1.6rem;background:rgba(255,255,255,.015)">
+            <div style="font-family:'Space Mono',monospace;font-size:.6rem;color:#333;letter-spacing:.15em;margin-bottom:1.2rem;text-transform:uppercase">Monorepo Layout</div>
+            <div style="display:flex;flex-direction:column;gap:.65rem">
+              <div style="display:flex;align-items:flex-start;gap:1rem">
+                <div style="width:10px;height:10px;background:var(--lime);flex-shrink:0;margin-top:2px"></div>
+                <div>
+                  <div style="font-size:.8rem;color:#888;font-weight:600">backend_service <span style="color:#333;font-family:'Space Mono',monospace;font-size:.65rem">:5000</span></div>
+                  <div style="font-size:.72rem;color:#3a3a3a;margin-top:.2rem">NestJS · Auth · Products · Cart · Orders · Payment</div>
+                </div>
+              </div>
+              <div style="display:flex;align-items:flex-start;gap:1rem">
+                <div style="width:10px;height:10px;border:1px solid rgba(200,245,66,.4);flex-shrink:0;margin-top:2px"></div>
+                <div>
+                  <div style="font-size:.8rem;color:#888;font-weight:600">frontend_service <span style="color:#333;font-family:'Space Mono',monospace;font-size:.65rem">:3000</span></div>
+                  <div style="font-size:.72rem;color:#3a3a3a;margin-top:.2rem">Next.js App Router · React · Tailwind · Cloudinary</div>
+                </div>
+              </div>
+              <div style="display:flex;align-items:flex-start;gap:1rem">
+                <div style="width:10px;height:10px;border:1px solid #222;flex-shrink:0;margin-top:2px"></div>
+                <div>
+                  <div style="font-size:.8rem;color:#888;font-weight:600">PostgreSQL</div>
+                  <div style="font-size:.72rem;color:#3a3a3a;margin-top:.2rem">Hosted DB · SSL connection string via env</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:2.5rem">
+            <div class="pd-section-lbl">Tech Stack</div>
+            <div class="tech-stack-grid">
+              <div class="tech-item"><div class="tech-item-name">NestJS</div><div class="tech-item-role">Backend API</div></div>
+              <div class="tech-item"><div class="tech-item-name">Next.js</div><div class="tech-item-role">Frontend</div></div>
+              <div class="tech-item"><div class="tech-item-name">TypeScript</div><div class="tech-item-role">Language</div></div>
+              <div class="tech-item"><div class="tech-item-name">PostgreSQL</div><div class="tech-item-role">Database</div></div>
+              <div class="tech-item"><div class="tech-item-name">Tailwind</div><div class="tech-item-role">Styling</div></div>
+              <div class="tech-item"><div class="tech-item-name">Cloudinary</div><div class="tech-item-role">Images / CDN</div></div>
+              <div class="tech-item"><div class="tech-item-name">JWT</div><div class="tech-item-role">Auth Tokens</div></div>
+              <div class="tech-item"><div class="tech-item-name">Vercel</div><div class="tech-item-role">Deployment</div></div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /pd-grid -->
+    </div><!-- /proj-detail-body -->
+
+    <!-- Live site CTA banner -->
+    <div style="margin:0 6% 5rem;border:1px solid rgba(200,245,66,.12);background:rgba(200,245,66,.03);padding:2.8rem 3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem">
+      <div>
+        <div style="font-family:'Space Mono',monospace;font-size:.6rem;color:var(--lime);letter-spacing:.2em;text-transform:uppercase;margin-bottom:.5rem">Live on Vercel</div>
+        <div style="font-size:1.1rem;font-weight:700;color:var(--text);letter-spacing:-.01em">ecp-six.vercel.app</div>
+        <div style="font-size:.8rem;color:#444;margin-top:.3rem">Deployed · Always on · Full stack</div>
+      </div>
+      <a href="https://ecp-six.vercel.app" target="_blank" class="btn-p" style="white-space:nowrap">Open Live Site ↗</a>
+    </div>
+
+    <div style="padding:3rem 6%;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem">
+      <button class="btn-s" onclick="showPortfolio()">← Back to Projects</button>
+      <div style="display:flex;gap:1rem;align-items:center;flex-wrap:wrap">
+        <div class="coming-soon-badge">
+          <svg width="8" height="8" viewBox="0 0 8 8" fill="none"><rect x="1" y="2.5" width="6" height="4.5" rx=".5" stroke="currentColor" stroke-width="1.1"/><path d="M2.5 2.5V2a1.5 1.5 0 013 0v.5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/></svg>
+          Private Repo
+        </div>
+        <a href="https://ecp-six.vercel.app" target="_blank" class="btn-p">Live Site ↗</a>
+      </div>
+    </div>
+
+    <footer>
+      <span class="ft">© 2026 — Yousaf Anwar Ali</span>
+      <div class="fl">
+        <a href="https://github.com/yousafanwar" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/yousafanwar-ali-341195301/" target="_blank">LinkedIn</a>
+      </div>
+    </footer>
+
+  </div><!-- /detail-ecp -->
+
+</div><!-- /project-view -->
+
+
+<script>
+/* ── DATA ── */
+const SKILLS=[
+  {cat:"Backend",items:["Node.js","NestJS","Express","Django","Python","REST APIs","JWT / OAuth"]},
+  {cat:"Frontend",items:["React","Vue.js","Next.js","TypeScript","Tailwind CSS","MUI"]},
+  {cat:"Databases",items:["PostgreSQL","MongoDB","MySQL","Redis","Prisma","Firebase"]},
+  {cat:"DevOps",items:["Docker","CI/CD","GitHub Actions","VPS Deployment","Celery","Microservices"]},
+];
+const PROJECTS=[
+  {id:"ecp",name:"ECP — Bird Buzz",desc:"Full-stack e-commerce platform with product catalog, filtering, cart, auth, and Cloudinary image uploads. Live on Vercel.",tags:["Next.js","TypeScript","PostgreSQL","Node.js"],repo:null,link:"https://ecp-six.vercel.app",detail:"ecp"},
+  {id:"chatapp",name:"ChatApp 2.0",desc:"Real-time chat app with a microservices architecture — separate auth, chat, and user services orchestrated via Docker Compose.",tags:["TypeScript","Microservices","Docker","WebSockets"],repo:"https://github.com/yousafanwar/ChatApp2.0",link:null,detail:"chatapp"},
+  {id:"authforge",name:"AuthForge API",desc:"Production-grade auth API with NestJS and Prisma. Implements JWT, refresh tokens, RBAC, and full test coverage.",tags:["NestJS","TypeScript","Prisma","PostgreSQL"],repo:"https://github.com/yousafanwar/AuthForge-API",link:null,detail:"authforge"},
+
+];
+
+/* ── SKILLS ── */
+let activeTab=0;
+function renderSkills(){
+  const tabs=document.getElementById('stabs');
+  const pills=document.getElementById('spills');
+  tabs.innerHTML=SKILLS.map((s,i)=>`<button class="stab${i===activeTab?' active':''}" onclick="setTab(${i})">${s.cat}</button>`).join('');
+  pills.innerHTML=SKILLS[activeTab].items.map((it,i)=>`<div class="pill" style="animation:fadeUp .35s ease ${i*.06}s both">${it}</div>`).join('');
+}
+function setTab(i){activeTab=i;renderSkills();}
+renderSkills();
+
+/* ── PROJECTS GRID ── */
+const grid=document.getElementById('pgrid');
+grid.innerHTML=PROJECTS.map((p,i)=>`
+<div class="proj-card reveal" style="transition-delay:${i*.1}s" onclick="handleCardClick('${p.id}')">
+  <div class="proj-idx">0${i+1}</div>
+  <div class="proj-name">${p.name}</div>
+  <div class="proj-desc">${p.desc}</div>
+  <div class="proj-tags">${p.tags.map(t=>`<span class="ptag">${t}</span>`).join('')}</div>
+  <div class="proj-links">
+    ${p.repo?`<a class="plink" href="${p.repo}" target="_blank" onclick="event.stopPropagation()">GitHub →</a>`:''}
+    ${p.link?`<a class="plink" href="${p.link}" target="_blank" onclick="event.stopPropagation()">Live →</a>`:''}
+    ${p.detail?`<span class="plink-detail">View Details <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5h6M5 2l3 3-3 3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>`:''}
+    ${!p.repo&&!p.link&&!p.detail?`<span class="plink" style="cursor:default;color:#2a2a2a">Professional Project</span>`:''}
+  </div>
+</div>`).join('');
+
+function handleCardClick(id){
+  const proj=PROJECTS.find(p=>p.id===id);
+  if(proj&&proj.detail) showProject(proj.detail);
+}
+
+/* ── FORM ── */
+function submitForm(e){
+  e.preventDefault();
+  document.getElementById('form-wrap').innerHTML=`<div class="success-box"><div class="success-icon">✓</div><div class="success-label">Message Sent</div><div class="success-sub">I'll get back to you soon.</div></div>`;
+}
+
+/* ── SCROLL ── */
+function sc(id){document.getElementById(id)?.scrollIntoView({behavior:'smooth'})}
+
+/* ── VIEW SWITCHING ── */
+function showProject(detailId){
+  const pv=document.getElementById('portfolio-view');
+  const dv=document.getElementById('project-view');
+  const nb=document.getElementById('nav-back');
+  const nl=document.getElementById('nav-main-links');
+
+  // hide all sub-pages, show the right one
+  dv.querySelectorAll('[id^="detail-"]').forEach(el=>el.style.display='none');
+  const target=document.getElementById('detail-'+detailId);
+  if(target) target.style.display='block';
+
+  pv.classList.add('hiding');
+  setTimeout(()=>{
+    pv.style.display='none';
+    pv.classList.remove('hiding');
+    dv.classList.add('visible');
+    requestAnimationFrame(()=>{ dv.classList.add('shown'); });
+    nb.style.display='flex';
+    nl.style.display='none';
+    window.scrollTo({top:0,behavior:'instant'});
+    setTimeout(()=>{
+      document.querySelectorAll('#project-view .reveal').forEach(el=>obs.observe(el));
+    },100);
+  },300);
+}
+
+function showPortfolio(){
+  const pv=document.getElementById('portfolio-view');
+  const dv=document.getElementById('project-view');
+  const nb=document.getElementById('nav-back');
+  const nl=document.getElementById('nav-main-links');
+
+  dv.classList.remove('shown');
+  setTimeout(()=>{
+    dv.classList.remove('visible');
+    pv.style.display='';
+    requestAnimationFrame(()=>{
+      window.scrollTo({top:0,behavior:'instant'});
+    });
+    nb.style.display='none';
+    nl.style.display='flex';
+    // re-trigger reveals
+    setTimeout(()=>{
+      document.querySelectorAll('#portfolio-view .reveal').forEach(el=>{
+        el.classList.remove('show');
+        obs.observe(el);
+      });
+    },100);
+  },300);
+}
+
+/* ── INTERSECTION OBSERVER ── */
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')});
+},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+setTimeout(()=>{document.querySelectorAll('.reveal').forEach(el=>obs.observe(el))},100);
+
+// Hide all detail sub-pages initially
+document.querySelectorAll('#project-view [id^="detail-"]').forEach(el=>el.style.display='none');
+</script>
+</body>
+</html>
