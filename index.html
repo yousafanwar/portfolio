@@ -195,6 +195,18 @@ footer{padding:2rem 6%;display:flex;justify-content:space-between;align-items:ce
 .stat-l{font-size:.7rem;color:#444;letter-spacing:.12em;text-transform:uppercase;margin-top:.4rem}
 
 .coming-soon-badge{display:inline-flex;align-items:center;gap:.5rem;padding:6px 14px;border:1px solid rgba(200,245,66,.2);background:rgba(200,245,66,.04);font-family:'Space Mono',monospace;font-size:.6rem;color:var(--lime);letter-spacing:.15em;text-transform:uppercase}
+.live-banner{
+  margin:0 6% 5rem;border:1px solid rgba(200,245,66,.12);background:rgba(200,245,66,.03);
+  padding:2.8rem 3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;
+}
+.live-banner-label{font-family:'Space Mono',monospace;font-size:.6rem;color:var(--lime);letter-spacing:.2em;text-transform:uppercase;margin-bottom:.5rem}
+.live-banner-url{font-size:1.1rem;font-weight:700;color:var(--text);letter-spacing:-.01em;word-break:break-all}
+.live-banner-sub{font-size:.8rem;color:#444;margin-top:.3rem}
+.detail-bottom{
+  padding:3rem 6%;border-top:1px solid var(--border);
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;
+}
+.detail-bottom-actions{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
 
 /* SCROLLBAR */
 ::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:#0b0b0b}::-webkit-scrollbar-thumb{background:#222}::-webkit-scrollbar-thumb:hover{background:#333}
@@ -320,7 +332,8 @@ footer{padding:2rem 6%;display:flex;justify-content:space-between;align-items:ce
           <span class="ptag">RBAC</span>
         </div>
         <div class="proj-detail-actions">
-          <a href="https://github.com/yousafanwar/AuthForge-API" target="_blank" class="btn-p">View on GitHub</a>
+          <a href="https://auth.aytraders.com/api/docs" target="_blank" rel="noopener noreferrer" class="btn-p">Live Demo ↗</a>
+          <a href="https://github.com/yousafanwar/AuthForge-API" target="_blank" rel="noopener noreferrer" class="btn-s">View on GitHub</a>
           <button class="btn-s" onclick="document.getElementById('demo-video').scrollIntoView({behavior:'smooth'})">Watch Demo</button>
         </div>
       </div>
@@ -383,6 +396,15 @@ footer{padding:2rem 6%;display:flex;justify-content:space-between;align-items:ce
       </div><!-- /pd-grid -->
     </div><!-- /proj-detail-body -->
 
+    <div class="live-banner">
+      <div>
+        <div class="live-banner-label">Live API Docs</div>
+        <div class="live-banner-url">auth.aytraders.com/api/docs</div>
+        <div class="live-banner-sub">Swagger UI · Interactive endpoints · Always on</div>
+      </div>
+      <a href="https://auth.aytraders.com/api/docs" target="_blank" rel="noopener noreferrer" class="btn-p" style="white-space:nowrap">Open Live Demo ↗</a>
+    </div>
+
     <!-- Demo Video -->
     <div class="video-section" id="demo-video">
       <div class="video-label">Demo Video</div>
@@ -391,10 +413,12 @@ footer{padding:2rem 6%;display:flex;justify-content:space-between;align-items:ce
       </div>
     </div>
 
-    <!-- Bottom nav -->
-    <div style="padding:3rem 6%;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem">
+    <div class="detail-bottom">
       <button class="btn-s" onclick="showPortfolio()">← Back to Projects</button>
-      <a href="https://github.com/yousafanwar/AuthForge-API" target="_blank" class="btn-p">View Source on GitHub</a>
+      <div class="detail-bottom-actions">
+        <a href="https://github.com/yousafanwar/AuthForge-API" target="_blank" rel="noopener noreferrer" class="btn-s">GitHub</a>
+        <a href="https://auth.aytraders.com/api/docs" target="_blank" rel="noopener noreferrer" class="btn-p">Live Demo ↗</a>
+      </div>
     </div>
 
     <footer>
@@ -427,11 +451,8 @@ footer{padding:2rem 6%;display:flex;justify-content:space-between;align-items:ce
           <span class="ptag">Microservices</span>
         </div>
         <div class="proj-detail-actions">
-          <a href="https://github.com/yousafanwar/ChatApp2.0" target="_blank" class="btn-p">View on GitHub</a>
-          <div class="coming-soon-badge">
-            <svg width="8" height="8" viewBox="0 0 8 8" fill="none"><circle cx="4" cy="4" r="3" stroke="currentColor" stroke-width="1.2"/><path d="M4 2.5v1.75L5 5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/></svg>
-            Live Demo — Coming Soon
-          </div>
+          <a href="https://chat.aytraders.com/login" target="_blank" rel="noopener noreferrer" class="btn-p">Live Demo ↗</a>
+          <a href="https://github.com/yousafanwar/ChatApp2.0" target="_blank" rel="noopener noreferrer" class="btn-s">View on GitHub</a>
         </div>
       </div>
     </div>
@@ -522,21 +543,21 @@ footer{padding:2rem 6%;display:flex;justify-content:space-between;align-items:ce
       </div><!-- /pd-grid -->
     </div><!-- /proj-detail-body -->
 
-    <!-- Demo placeholder -->
-    <div class="video-section">
-      <div class="video-label">Demo Video</div>
-      <div style="border:1px solid var(--border);padding:4rem 2rem;text-align:center;background:rgba(255,255,255,.012)">
-        <div style="font-family:'Space Mono',monospace;font-size:2rem;color:rgba(200,245,66,.12);margin-bottom:1.2rem">◷</div>
-        <div class="coming-soon-badge" style="margin:0 auto">Live Demo — Available in a few days</div>
-        <p style="font-size:.8rem;color:#3a3a3a;margin-top:1rem;font-family:'Space Mono',monospace;letter-spacing:.06em">Check back soon or star the repo to follow progress</p>
-        <a href="https://github.com/yousafanwar/ChatApp2.0" target="_blank" style="display:inline-block;margin-top:1.5rem;font-size:.68rem;color:var(--lime);font-family:'Space Mono',monospace;letter-spacing:.1em;text-transform:uppercase;transition:opacity .2s" onmouseover="this.style.opacity='.6'" onmouseout="this.style.opacity='1'">GitHub Repo →</a>
+    <div class="live-banner">
+      <div>
+        <div class="live-banner-label">Live Application</div>
+        <div class="live-banner-url">chat.aytraders.com</div>
+        <div class="live-banner-sub">Real-time messaging · Microservices stack · Deployed</div>
       </div>
+      <a href="https://chat.aytraders.com/login" target="_blank" rel="noopener noreferrer" class="btn-p" style="white-space:nowrap">Open Live Demo ↗</a>
     </div>
 
-    <!-- Bottom nav -->
-    <div style="padding:3rem 6%;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem">
+    <div class="detail-bottom">
       <button class="btn-s" onclick="showPortfolio()">← Back to Projects</button>
-      <a href="https://github.com/yousafanwar/ChatApp2.0" target="_blank" class="btn-p">View Source on GitHub</a>
+      <div class="detail-bottom-actions">
+        <a href="https://github.com/yousafanwar/ChatApp2.0" target="_blank" rel="noopener noreferrer" class="btn-s">GitHub</a>
+        <a href="https://chat.aytraders.com/login" target="_blank" rel="noopener noreferrer" class="btn-p">Live Demo ↗</a>
+      </div>
     </div>
 
     <footer>
@@ -558,7 +579,7 @@ footer{padding:2rem 6%;display:flex;justify-content:space-between;align-items:ce
       <div class="proj-detail-inner">
         <div class="proj-detail-eyebrow"><span class="eyebrow-line"></span>Project — 01 / ECP — Bird Buzz</div>
         <h1 class="proj-detail-title">Bird<span>Buzz</span><br>Store</h1>
-        <p class="proj-detail-tagline">A full-stack e-commerce platform for bird supplies — product catalog, filtering, cart, checkout, and JWT-authenticated accounts. Built as a monorepo with NestJS on the backend and Next.js on the frontend, live on Vercel.</p>
+        <p class="proj-detail-tagline">A full-stack e-commerce platform for bird supplies — product catalog, filtering, cart, checkout, and JWT-authenticated accounts. Built as a monorepo with NestJS on the backend and Next.js on the frontend, live at aytraders.com.</p>
         <div class="proj-detail-tags">
           <span class="ptag">NestJS</span>
           <span class="ptag">Next.js</span>
@@ -569,7 +590,7 @@ footer{padding:2rem 6%;display:flex;justify-content:space-between;align-items:ce
           <span class="ptag">JWT</span>
         </div>
         <div class="proj-detail-actions">
-          <a href="https://ecp-six.vercel.app" target="_blank" class="btn-p">View Live Site</a>
+          <a href="https://aytraders.com/" target="_blank" rel="noopener noreferrer" class="btn-p">Live Demo ↗</a>
           <div class="coming-soon-badge">
             <svg width="8" height="8" viewBox="0 0 8 8" fill="none"><rect x="1" y="2.5" width="6" height="4.5" rx=".5" stroke="currentColor" stroke-width="1.1"/><path d="M2.5 2.5V2a1.5 1.5 0 013 0v.5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/></svg>
             Private — Client Project
@@ -581,7 +602,7 @@ footer{padding:2rem 6%;display:flex;justify-content:space-between;align-items:ce
     <!-- Stats bar -->
     <div class="stat-row" style="margin:0">
       <div class="stat-cell"><div class="stat-n">2</div><div class="stat-l">Services (Monorepo)</div></div>
-      <div class="stat-cell"><div class="stat-n">Live</div><div class="stat-l">Deployed on Vercel</div></div>
+      <div class="stat-cell"><div class="stat-n">Live</div><div class="stat-l">Production Deployed</div></div>
       <div class="stat-cell"><div class="stat-n">Full</div><div class="stat-l">Auth + Cart + Orders</div></div>
     </div>
 
@@ -594,7 +615,7 @@ footer{padding:2rem 6%;display:flex;justify-content:space-between;align-items:ce
           <h3 class="pd-section-title">What is ECP Bird Buzz?</h3>
           <p class="pd-text">ECP is a full-stack e-commerce application for bird products — from feed to accessories. It covers the complete shopping journey: browsing a product catalog with filters, adding items to cart, authenticating, and placing orders.</p>
           <p class="pd-text">The project is structured as a monorepo with two services: a NestJS backend that handles auth, products, cart, orders, and payment flows; and a Next.js (App Router) storefront that consumes the API and renders a fast, SEO-friendly UI.</p>
-          <p class="pd-text">Product images are managed through Cloudinary, giving the storefront optimized delivery and transformation out of the box. The whole thing is live on Vercel.</p>
+          <p class="pd-text">Product images are managed through Cloudinary, giving the storefront optimized delivery and transformation out of the box. The storefront is live at aytraders.com.</p>
 
           <div style="margin-top:2.5rem">
             <div class="pd-section-lbl">Features</div>
@@ -664,24 +685,23 @@ footer{padding:2rem 6%;display:flex;justify-content:space-between;align-items:ce
       </div><!-- /pd-grid -->
     </div><!-- /proj-detail-body -->
 
-    <!-- Live site CTA banner -->
-    <div style="margin:0 6% 5rem;border:1px solid rgba(200,245,66,.12);background:rgba(200,245,66,.03);padding:2.8rem 3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem">
+    <div class="live-banner">
       <div>
-        <div style="font-family:'Space Mono',monospace;font-size:.6rem;color:var(--lime);letter-spacing:.2em;text-transform:uppercase;margin-bottom:.5rem">Live on Vercel</div>
-        <div style="font-size:1.1rem;font-weight:700;color:var(--text);letter-spacing:-.01em">ecp-six.vercel.app</div>
-        <div style="font-size:.8rem;color:#444;margin-top:.3rem">Deployed · Always on · Full stack</div>
+        <div class="live-banner-label">Live Storefront</div>
+        <div class="live-banner-url">aytraders.com</div>
+        <div class="live-banner-sub">E-commerce · Full catalog · Auth + cart + orders</div>
       </div>
-      <a href="https://ecp-six.vercel.app" target="_blank" class="btn-p" style="white-space:nowrap">Open Live Site ↗</a>
+      <a href="https://aytraders.com/" target="_blank" rel="noopener noreferrer" class="btn-p" style="white-space:nowrap">Open Live Demo ↗</a>
     </div>
 
-    <div style="padding:3rem 6%;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem">
+    <div class="detail-bottom">
       <button class="btn-s" onclick="showPortfolio()">← Back to Projects</button>
-      <div style="display:flex;gap:1rem;align-items:center;flex-wrap:wrap">
+      <div class="detail-bottom-actions">
         <div class="coming-soon-badge">
           <svg width="8" height="8" viewBox="0 0 8 8" fill="none"><rect x="1" y="2.5" width="6" height="4.5" rx=".5" stroke="currentColor" stroke-width="1.1"/><path d="M2.5 2.5V2a1.5 1.5 0 013 0v.5" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/></svg>
           Private Repo
         </div>
-        <a href="https://ecp-six.vercel.app" target="_blank" class="btn-p">Live Site ↗</a>
+        <a href="https://aytraders.com/" target="_blank" rel="noopener noreferrer" class="btn-p">Live Demo ↗</a>
       </div>
     </div>
 
@@ -707,9 +727,9 @@ const SKILLS=[
   {cat:"DevOps",items:["Docker","CI/CD","GitHub Actions","VPS Deployment","Celery","Microservices"]},
 ];
 const PROJECTS=[
-  {id:"ecp",name:"ECP — Bird Buzz",desc:"Full-stack e-commerce platform with product catalog, filtering, cart, auth, and Cloudinary image uploads. Live on Vercel.",tags:["Next.js","TypeScript","PostgreSQL","Node.js"],repo:null,link:"https://ecp-six.vercel.app",detail:"ecp"},
-  {id:"chatapp",name:"ChatApp 2.0",desc:"Real-time chat app with a microservices architecture — separate auth, chat, and user services orchestrated via Docker Compose.",tags:["TypeScript","Microservices","Docker","WebSockets"],repo:"https://github.com/yousafanwar/ChatApp2.0",link:null,detail:"chatapp"},
-  {id:"authforge",name:"AuthForge API",desc:"Production-grade auth API with NestJS and Prisma. Implements JWT, refresh tokens, RBAC, and full test coverage.",tags:["NestJS","TypeScript","Prisma","PostgreSQL"],repo:"https://github.com/yousafanwar/AuthForge-API",link:null,detail:"authforge"},
+  {id:"ecp",name:"ECP — Bird Buzz",desc:"Full-stack e-commerce platform with product catalog, filtering, cart, auth, and Cloudinary image uploads. Live at aytraders.com.",tags:["Next.js","TypeScript","PostgreSQL","Node.js"],repo:null,link:"https://aytraders.com/",detail:"ecp"},
+  {id:"chatapp",name:"ChatApp 2.0",desc:"Real-time chat app with a microservices architecture — separate auth, chat, and user services orchestrated via Docker Compose.",tags:["TypeScript","Microservices","Docker","WebSockets"],repo:"https://github.com/yousafanwar/ChatApp2.0",link:"https://chat.aytraders.com/login",detail:"chatapp"},
+  {id:"authforge",name:"AuthForge API",desc:"Production-grade auth API with NestJS and Prisma. Implements JWT, refresh tokens, RBAC, and full test coverage.",tags:["NestJS","TypeScript","Prisma","PostgreSQL"],repo:"https://github.com/yousafanwar/AuthForge-API",link:"https://auth.aytraders.com/api/docs",detail:"authforge"},
 
 ];
 
@@ -734,7 +754,7 @@ grid.innerHTML=PROJECTS.map((p,i)=>`
   <div class="proj-tags">${p.tags.map(t=>`<span class="ptag">${t}</span>`).join('')}</div>
   <div class="proj-links">
     ${p.repo?`<a class="plink" href="${p.repo}" target="_blank" onclick="event.stopPropagation()">GitHub →</a>`:''}
-    ${p.link?`<a class="plink" href="${p.link}" target="_blank" onclick="event.stopPropagation()">Live →</a>`:''}
+    ${p.link?`<a class="plink" href="${p.link}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">Live Demo →</a>`:''}
     ${p.detail?`<span class="plink-detail">View Details <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 5h6M5 2l3 3-3 3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>`:''}
     ${!p.repo&&!p.link&&!p.detail?`<span class="plink" style="cursor:default;color:#2a2a2a">Professional Project</span>`:''}
   </div>
