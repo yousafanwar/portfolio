@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Yousaf Anwar Ali — Dev Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>emailjs.init("ZZeay2F3o_f9K4VIQ");</script>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -290,9 +292,9 @@ footer{padding:2rem 6%;display:flex;justify-content:space-between;align-items:ce
     </div>
     <div id="form-wrap">
       <form class="form" id="cf" onsubmit="submitForm(event)">
-        <input class="inp" placeholder="Your Name" required />
-        <input class="inp" type="email" placeholder="Email Address" required />
-        <textarea class="inp" placeholder="Tell me about your project..." required></textarea>
+        <input class="inp" name="from_name" placeholder="Your Name" required />
+        <input class="inp" type="email" name="from_email" placeholder="Email Address" required />
+        <textarea class="inp" name="message" placeholder="Tell me about your project..." required></textarea>
         <button type="submit" class="btn-p" style="align-self:flex-start">Send Message</button>
       </form>
     </div>
@@ -1546,7 +1548,19 @@ function handleCardClick(id){
 /* ── FORM ── */
 function submitForm(e){
   e.preventDefault();
-  document.getElementById('form-wrap').innerHTML=`<div class="success-box"><div class="success-icon">✓</div><div class="success-label">Message Sent</div><div class="success-sub">I'll get back to you soon.</div></div>`;
+  const btn=document.querySelector('#cf .btn-p');
+  btn.textContent='Sending...';
+  btn.disabled=true;
+
+  emailjs.sendForm('portfolio_service','template_09hk4nu','#cf')
+    .then(()=>{
+      document.getElementById('form-wrap').innerHTML=`<div class="success-box"><div class="success-icon">✓</div><div class="success-label">Message Sent</div><div class="success-sub">I'll get back to you soon.</div></div>`;
+    })
+    .catch(()=>{
+      btn.textContent='Send Message';
+      btn.disabled=false;
+      alert('Something went wrong. Please try again.');
+    });
 }
 
 /* ── SCROLL ── */
