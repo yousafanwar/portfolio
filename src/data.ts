@@ -1,10 +1,65 @@
 import type { Project, SkillCategory } from './types'
 
 export const SKILLS: SkillCategory[] = [
-  { cat: 'Backend', items: ['Node.js', 'NestJS', 'Express', 'Django', 'Python', 'REST APIs', 'JWT / OAuth'] },
-  { cat: 'Frontend', items: ['React', 'Vue.js', 'Next.js', 'TypeScript', 'Tailwind CSS', 'MUI'] },
-  { cat: 'Databases', items: ['PostgreSQL', 'MongoDB', 'MySQL', 'Redis', 'Prisma', 'Firebase'] },
-  { cat: 'DevOps', items: ['Docker', 'CI/CD', 'GitHub Actions', 'VPS Deployment', 'Celery', 'Microservices'] },
+  {
+    cat: 'Languages & Frameworks',
+    items: [
+      'JavaScript',
+      'TypeScript',
+      'Node.js',
+      'Express.js',
+      'Nest.js',
+      'Django',
+      'Python',
+      'C#',
+      'ASP.NET Core',
+      'Vue.js',
+      'React.js',
+      'Next.js',
+    ],
+  },
+  {
+    cat: 'Backend & Architecture',
+    items: [
+      'RESTful API Development',
+      'Microservices Architecture',
+      'System Design',
+      'Scalable Backend Systems',
+    ],
+  },
+  {
+    cat: 'AI & Automation',
+    items: [
+      'Vision-LLM Integration',
+      'Agent Architecture (Observe-Think-Act)',
+      'Playwright',
+      'FastAPI',
+    ],
+  },
+  {
+    cat: 'Databases',
+    items: ['PostgreSQL', 'SQL Server', 'MySQL', 'MongoDB'],
+  },
+  {
+    cat: 'Task Queues & Messaging',
+    items: ['Celery', 'BullMQ', 'Apache Kafka', 'Hangfire', 'Redis'],
+  },
+  {
+    cat: 'Real-Time & Auth',
+    items: ['SignalR', 'JWT Auth', 'Passport.js', 'Refresh Tokens', 'RBAC'],
+  },
+  {
+    cat: 'DevOps & Tools',
+    items: ['Docker', 'CI/CD', 'GitHub Actions', 'Firebase Cloud Messaging (FCM)'],
+  },
+  {
+    cat: 'ORM / Query Builders',
+    items: ['Prisma', 'Django ORM', 'Entity Framework Core'],
+  },
+  {
+    cat: 'Version Control',
+    items: ['Git', 'GitHub'],
+  },
 ]
 
 export const PROJECTS: Project[] = [

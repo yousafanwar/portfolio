@@ -1,3 +1,5 @@
+import { SKILLS } from '../data'
+
 export default function About() {
   return (
     <div id="about-view">
@@ -43,42 +45,35 @@ export default function About() {
               <div className="pd-section-lbl">Skills</div>
               <h3 className="pd-section-title" style={{ marginBottom: '1.5rem' }}>What I Work With</h3>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5px', background: 'var(--faint)' }}>
-
-                <div style={{ background: 'var(--bg)', padding: '1.2rem 1.5rem', display: 'grid', gridTemplateColumns: '200px 1fr', gap: '1rem', alignItems: 'start' }}>
-                  <div style={{ fontFamily: '\'Space Mono\',monospace', fontSize: '.58rem', color: 'var(--lime)', letterSpacing: '.12em', textTransform: 'uppercase', paddingTop: '.15rem' }}>Languages &amp; Frameworks</div>
-                  <div style={{ fontSize: '.85rem', color: 'var(--muted-dim)', lineHeight: 1.8 }}>JavaScript, TypeScript, Vue.js, React.js, Next.js, Node.js, NestJS, Express.js, Django, Python</div>
-                </div>
-
-                <div style={{ background: 'var(--bg)', padding: '1.2rem 1.5rem', display: 'grid', gridTemplateColumns: '200px 1fr', gap: '1rem', alignItems: 'start' }}>
-                  <div style={{ fontFamily: '\'Space Mono\',monospace', fontSize: '.58rem', color: 'var(--lime)', letterSpacing: '.12em', textTransform: 'uppercase', paddingTop: '.15rem' }}>Databases</div>
-                  <div style={{ fontSize: '.85rem', color: 'var(--muted-dim)', lineHeight: 1.8 }}>PostgreSQL, MongoDB, MySQL</div>
-                </div>
-
-                <div style={{ background: 'var(--bg)', padding: '1.2rem 1.5rem', display: 'grid', gridTemplateColumns: '200px 1fr', gap: '1rem', alignItems: 'start' }}>
-                  <div style={{ fontFamily: '\'Space Mono\',monospace', fontSize: '.58rem', color: 'var(--lime)', letterSpacing: '.12em', textTransform: 'uppercase', paddingTop: '.15rem' }}>ORM / Query</div>
-                  <div style={{ fontSize: '.85rem', color: 'var(--muted-dim)', lineHeight: 1.8 }}>Prisma, Django ORM</div>
-                </div>
-
-                <div style={{ background: 'var(--bg)', padding: '1.2rem 1.5rem', display: 'grid', gridTemplateColumns: '200px 1fr', gap: '1rem', alignItems: 'start' }}>
-                  <div style={{ fontFamily: '\'Space Mono\',monospace', fontSize: '.58rem', color: 'var(--lime)', letterSpacing: '.12em', textTransform: 'uppercase', paddingTop: '.15rem' }}>Task Queues</div>
-                  <div style={{ fontSize: '.85rem', color: 'var(--muted-dim)', lineHeight: 1.8 }}>Celery, BullMQ</div>
-                </div>
-
-                <div style={{ background: 'var(--bg)', padding: '1.2rem 1.5rem', display: 'grid', gridTemplateColumns: '200px 1fr', gap: '1rem', alignItems: 'start' }}>
-                  <div style={{ fontFamily: '\'Space Mono\',monospace', fontSize: '.58rem', color: 'var(--lime)', letterSpacing: '.12em', textTransform: 'uppercase', paddingTop: '.15rem' }}>Styling</div>
-                  <div style={{ fontSize: '.85rem', color: 'var(--muted-dim)', lineHeight: 1.8 }}>CSS, Materialize CSS, Bootstrap, Material-UI (MUI)</div>
-                </div>
-
-                <div style={{ background: 'var(--bg)', padding: '1.2rem 1.5rem', display: 'grid', gridTemplateColumns: '200px 1fr', gap: '1rem', alignItems: 'start' }}>
-                  <div style={{ fontFamily: '\'Space Mono\',monospace', fontSize: '.58rem', color: 'var(--lime)', letterSpacing: '.12em', textTransform: 'uppercase', paddingTop: '.15rem' }}>DevOps</div>
-                  <div style={{ fontSize: '.85rem', color: 'var(--muted-dim)', lineHeight: 1.8 }}>Docker, CI/CD, GitHub Actions</div>
-                </div>
-
-                <div style={{ background: 'var(--bg)', padding: '1.2rem 1.5rem', display: 'grid', gridTemplateColumns: '200px 1fr', gap: '1rem', alignItems: 'start' }}>
-                  <div style={{ fontFamily: '\'Space Mono\',monospace', fontSize: '.58rem', color: 'var(--lime)', letterSpacing: '.12em', textTransform: 'uppercase', paddingTop: '.15rem' }}>Version Control</div>
-                  <div style={{ fontSize: '.85rem', color: 'var(--muted-dim)', lineHeight: 1.8 }}>Git, GitHub</div>
-                </div>
-
+                {SKILLS.map((skill) => (
+                  <div
+                    key={skill.cat}
+                    style={{
+                      background: 'var(--bg)',
+                      padding: '1.2rem 1.5rem',
+                      display: 'grid',
+                      gridTemplateColumns: '220px 1fr',
+                      gap: '1rem',
+                      alignItems: 'start',
+                    }}
+                  >
+                    <div
+                      style={{
+                        fontFamily: "'Space Mono',monospace",
+                        fontSize: '.58rem',
+                        color: 'var(--lime)',
+                        letterSpacing: '.12em',
+                        textTransform: 'uppercase',
+                        paddingTop: '.15rem',
+                      }}
+                    >
+                      {skill.cat}
+                    </div>
+                    <div style={{ fontSize: '.85rem', color: 'var(--muted-dim)', lineHeight: 1.8 }}>
+                      {skill.items.join(', ')}
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
 
