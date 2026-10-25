@@ -1,6 +1,5 @@
 import type { ComponentType } from 'react'
 import AuthForge from '../components/details/AuthForge'
-import ChatApp from '../components/details/ChatApp'
 import Ecp from '../components/details/Ecp'
 import Mira from '../components/details/Mira'
 import UnityGames from '../components/details/UnityGames'
@@ -11,7 +10,6 @@ import type { DetailId } from '../types'
 
 export const PROJECT_DETAILS: Record<DetailId, ComponentType> = {
   authforge: AuthForge,
-  chatapp: ChatApp,
   ecp: Ecp,
   mira: Mira,
   unitygames: UnityGames,

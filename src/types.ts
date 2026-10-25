@@ -1,6 +1,5 @@
 export type DetailId =
   | 'authforge'
-  | 'chatapp'
   | 'ecp'
   | 'mira'
   | 'unitygames'

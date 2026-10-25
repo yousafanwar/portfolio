@@ -7,9 +7,9 @@ export default function Mira() {
               <div className="proj-detail-grid"></div>
               <div className="proj-detail-glow"></div>
               <div className="proj-detail-inner">
-                <div className="proj-detail-eyebrow"><span className="eyebrow-line"></span>Professional Project — Omnisoft / Mira
+                <div className="proj-detail-eyebrow"><span className="eyebrow-line"></span>Professional Project — Omnisoft / Mirex
                   Network</div>
-                <h1 className="proj-detail-title">Mira<span>Network</span><br />Backend</h1>
+                <h1 className="proj-detail-title">Mirex<span>Network</span><br />Backend</h1>
                 <p className="proj-detail-tagline">Backend for a real-time cryptocurrency mining and airdrop platform. Django +
                   Celery + Redis — concurrent mining sessions, FCM topic-based push notifications, fraud detection, and
                   airdrop payout management at scale.</p>
@@ -24,6 +24,7 @@ export default function Mira() {
                   <span className="ptag">WebSockets</span>
                 </div>
                 <div className="proj-detail-actions">
+                  <a href="https://play.google.com/store/apps/details?id=com.lumira_mobile" target="_blank" rel="noopener noreferrer" className="btn-p">Google Play ↗</a>
                   <div className="coming-soon-badge">
                     <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
                       <rect x="1" y="2.5" width="6" height="4.5" rx=".5" stroke="currentColor" strokeWidth="1.1" />
@@ -58,8 +59,8 @@ export default function Mira() {
 
                 <div>
                   <div className="pd-section-lbl">Overview</div>
-                  <h3 className="pd-section-title">What is Mira Network?</h3>
-                  <p className="pd-text">Mira Network is a cryptocurrency mining and airdrop platform where users mine virtual
+                  <h3 className="pd-section-title">What is Mirex Network?</h3>
+                  <p className="pd-text">Mirex Network is a cryptocurrency mining and airdrop platform where users mine virtual
                     currency, participate in airdrops, earn referral rewards, and receive real-time push notifications — all
                     managed by a Django backend built for concurrency and scale.</p>
                   <p className="pd-text">I joined as Backend Developer at Omnisoft to build and stabilize the core systems: mining
@@ -249,6 +250,7 @@ export default function Mira() {
             <div className="detail-bottom">
               <Link to="/projects" className="btn-s">← Back to Projects</Link>
               <div className="detail-bottom-actions">
+                <a href="https://play.google.com/store/apps/details?id=com.lumira_mobile" target="_blank" rel="noopener noreferrer" className="btn-p">Google Play ↗</a>
                 <div className="coming-soon-badge">
                   <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
                     <rect x="1" y="2.5" width="6" height="4.5" rx=".5" stroke="currentColor" strokeWidth="1.1" />

@@ -7,10 +7,10 @@ export default function UnityGames() {
               <div className="proj-detail-grid"></div>
               <div className="proj-detail-glow"></div>
               <div className="proj-detail-inner">
-                <div className="proj-detail-eyebrow"><span className="eyebrow-line"></span>Professional Project — Omnisoft / Mira
+                <div className="proj-detail-eyebrow"><span className="eyebrow-line"></span>Professional Project — Omnisoft / Mirex
                   Network</div>
                 <h1 className="proj-detail-title">Unity<span>Games</span><br />Backend</h1>
-                <p className="proj-detail-tagline">A standalone NestJS service built to integrate Unity games into Mira Network.
+                <p className="proj-detail-tagline">A standalone NestJS service built to integrate Unity games into Mirex Network.
                   Handles player lifecycle, event-based scoring with global and per-event stats, auto winner calculation, and
                   top-10 leaderboards — all consumed directly by Unity clients over REST.</p>
                 <div className="proj-detail-tags">
@@ -57,7 +57,7 @@ export default function UnityGames() {
                 <div>
                   <div className="pd-section-lbl">Overview</div>
                   <h3 className="pd-section-title">What is this service?</h3>
-                  <p className="pd-text">As part of Mira Network, the platform integrated Unity-built games to give users another
+                  <p className="pd-text">As part of Mirex Network, the platform integrated Unity-built games to give users another
                     way to earn ADT rewards. I designed and built a dedicated NestJS backend to handle everything the games
                     needed — player registration, score tracking, event management, and leaderboards.</p>
                   <p className="pd-text">Unity clients talk to this service directly over REST. On game start, a single <code

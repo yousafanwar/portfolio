@@ -44,7 +44,7 @@ export default function Projects() {
                     rel="noopener noreferrer"
                     onClick={(e) => e.stopPropagation()}
                   >
-                    Live Demo →
+                    {p.link?.includes('play.google.com') ? 'Google Play →' : 'Live Demo →'}
                   </a>
                 )}
                 {p.detail && (
