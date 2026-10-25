@@ -64,6 +64,15 @@ export const SKILLS: SkillCategory[] = [
 
 export const PROJECTS: Project[] = [
   {
+    id: 'nooktables',
+    name: 'NookTables',
+    desc: 'Mobile-first social app for meeting over coffee in Lahore — open a table, find nearby locals, and join the conversation. Next.js web app live at nooktables.app. Built as a client project.',
+    tags: ['Next.js', 'TypeScript', 'React', 'Mobile Web'],
+    repo: null,
+    link: 'https://nooktables.app/',
+    detail: 'nooktables',
+  },
+  {
     id: 'ecp',
     name: 'ECP — Bird Buzz',
     desc: 'Full-stack e-commerce platform for bird supplies — product catalog, filtering, cart, checkout, and JWT auth. Built as a client project with NestJS backend and Next.js storefront. Live at aytraders.com.',

@@ -1,4 +1,5 @@
 export type DetailId =
+  | 'nooktables'
   | 'authforge'
   | 'ecp'
   | 'mira'
