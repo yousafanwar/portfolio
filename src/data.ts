@@ -57,7 +57,6 @@ export const SKILLS: SkillCategory[] = [
       'Vue.js',
       'FastAPI',
     ],
-    accent: ['Node.js', 'Django', 'Nest.js', 'Next.js'],
   },
   {
     cat: 'Backend & Architecture',
@@ -67,7 +66,6 @@ export const SKILLS: SkillCategory[] = [
       'System Design',
       'Scalable Systems',
     ],
-    accent: ['Microservices Architecture'],
   },
   {
     cat: 'AI & Automation',
@@ -77,12 +75,10 @@ export const SKILLS: SkillCategory[] = [
       'Playwright',
       'PyAutoGUI',
     ],
-    accent: ['Agent Architecture (Observe-Think-Act)'],
   },
   {
     cat: 'Task Queues & Messaging',
     items: ['Celery', 'BullMQ', 'Apache Kafka', 'Redis', 'Hangfire'],
-    accent: ['Redis', 'Apache Kafka'],
   },
   {
     cat: 'Database & Data Layer',
@@ -95,7 +91,6 @@ export const SKILLS: SkillCategory[] = [
       'Django ORM',
       'Entity Framework Core',
     ],
-    accent: ['PostgreSQL'],
   },
   {
     cat: 'Real-time, Security & DevOps',
@@ -109,7 +104,6 @@ export const SKILLS: SkillCategory[] = [
       'Linux',
       'Firebase FCM',
     ],
-    accent: ['Docker', 'JWT Auth'],
   },
 ]
 

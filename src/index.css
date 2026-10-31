@@ -574,6 +574,10 @@ section {
   overflow: auto;
 }
 
+.skill-flip:hover .skill-face-back {
+  pointer-events: auto;
+}
+
 .skill-flip:hover .skill-face {
   border-color: var(--border-active);
   box-shadow:
@@ -638,9 +642,11 @@ section {
   font-weight: 500;
   color: var(--muted);
   line-height: 1.4;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+  cursor: default;
 }
 
-.tech-badge.accent {
+.tech-badge:hover {
   background: rgba(204, 255, 0, 0.08);
   border-color: rgba(204, 255, 0, 0.3);
   color: var(--lime);

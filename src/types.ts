@@ -12,7 +12,6 @@ export type DetailId =
 export type SkillCategory = {
   cat: string
   items: string[]
-  accent?: string[]
 }
 
 export type Project = {

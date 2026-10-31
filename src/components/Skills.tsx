@@ -47,14 +47,11 @@ export default function Skills() {
                       <h3 className="skill-card-title">{skill.cat}</h3>
                     </header>
                     <div className="skill-pills">
-                      {skill.items.map((item) => {
-                        const isAccent = skill.accent?.includes(item)
-                        return (
-                          <span key={item} className={`tech-badge${isAccent ? ' accent' : ''}`}>
-                            {item}
-                          </span>
-                        )
-                      })}
+                      {skill.items.map((item) => (
+                        <span key={item} className="tech-badge">
+                          {item}
+                        </span>
+                      ))}
                     </div>
                   </div>
                 </div>
