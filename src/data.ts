@@ -1,4 +1,43 @@
-import type { Project, SkillCategory } from './types'
+import type {
+  ContactChannel,
+  Experience,
+  Project,
+  SkillCategory,
+  Stat,
+} from './types'
+
+export const SITE = {
+  name: 'Yousaf Anwar Ali',
+  role: 'Backend-Focused Full Stack Developer',
+  email: 'yousafanwar7777@gmail.com',
+  phone: '+92 336 4407110',
+  phoneDisplay: '+92 336 4407110',
+  location: 'Lahore, Pakistan',
+  availability: 'Available for Opportunities — Lahore, Pakistan (Remote / Hybrid)',
+  github: 'https://github.com/yousafanwar',
+  githubLabel: 'github.com/yousafanwar',
+  linkedin: 'https://www.linkedin.com/in/yousaf-anwar-ali-341195301/',
+  linkedinLabel: 'linkedin.com/in/yousaf-anwar-ali',
+  resume: 'https://github.com/yousafanwar',
+} as const
+
+export const STATS: Stat[] = [
+  {
+    value: '4M+',
+    label: 'Users Served',
+    detail: 'Mirex Network Platform',
+  },
+  {
+    value: '4+',
+    label: 'Years Production',
+    detail: 'Django · NestJS · Node.js',
+  },
+  {
+    value: '15+',
+    label: 'Microservices Shipped',
+    detail: 'RecruitMe SaaS Platform',
+  },
+]
 
 export const SKILLS: SkillCategory[] = [
   {
@@ -13,19 +52,22 @@ export const SKILLS: SkillCategory[] = [
       'Python',
       'C#',
       'ASP.NET Core',
-      'Vue.js',
-      'React.js',
+      'React',
       'Next.js',
+      'Vue.js',
+      'FastAPI',
     ],
+    accent: ['Node.js', 'Django', 'Nest.js', 'Next.js'],
   },
   {
     cat: 'Backend & Architecture',
     items: [
-      'RESTful API Development',
+      'RESTful APIs',
       'Microservices Architecture',
       'System Design',
-      'Scalable Backend Systems',
+      'Scalable Systems',
     ],
+    accent: ['Microservices Architecture'],
   },
   {
     cat: 'AI & Automation',
@@ -33,32 +75,135 @@ export const SKILLS: SkillCategory[] = [
       'Vision-LLM Integration',
       'Agent Architecture (Observe-Think-Act)',
       'Playwright',
-      'FastAPI',
+      'PyAutoGUI',
     ],
-  },
-  {
-    cat: 'Databases',
-    items: ['PostgreSQL', 'SQL Server', 'MySQL', 'MongoDB'],
+    accent: ['Agent Architecture (Observe-Think-Act)'],
   },
   {
     cat: 'Task Queues & Messaging',
-    items: ['Celery', 'BullMQ', 'Apache Kafka', 'Hangfire', 'Redis'],
+    items: ['Celery', 'BullMQ', 'Apache Kafka', 'Redis', 'Hangfire'],
+    accent: ['Redis', 'Apache Kafka'],
   },
   {
-    cat: 'Real-Time & Auth',
-    items: ['SignalR', 'JWT Auth', 'Passport.js', 'Refresh Tokens', 'RBAC'],
+    cat: 'Database & Data Layer',
+    items: [
+      'PostgreSQL',
+      'SQL Server',
+      'MySQL',
+      'MongoDB',
+      'Prisma',
+      'Django ORM',
+      'Entity Framework Core',
+    ],
+    accent: ['PostgreSQL'],
   },
   {
-    cat: 'DevOps & Tools',
-    items: ['Docker', 'CI/CD', 'GitHub Actions', 'Firebase Cloud Messaging (FCM)'],
+    cat: 'Real-time, Security & DevOps',
+    items: [
+      'SignalR',
+      'JWT Auth',
+      'Passport.js',
+      'GitHub Actions',
+      'Nginx',
+      'Docker',
+      'Linux',
+      'Firebase FCM',
+    ],
+    accent: ['Docker', 'JWT Auth'],
+  },
+]
+
+export const EXPERIENCE: Experience[] = [
+  {
+    role: 'Software Engineer',
+    company: 'Omnisoft',
+    location: 'Lahore',
+    period: 'Nov 2025 — Present',
+    projects: [
+      {
+        name: 'Mirex Network',
+        summary:
+          'Backend for a real-time crypto mining & airdrop platform serving millions of users — concurrent mining sessions, FCM topic notifications, and fraud detection at scale.',
+        tags: ['Django', 'Celery', 'Redis', 'PostgreSQL', 'Firebase FCM'],
+      },
+      {
+        name: 'ETMP — Enterprise Task Platform ==> Replace this with Carspot NL',
+        summary:
+          'Full-stack enterprise task platform with Clean Architecture .NET API + React SPA — skills-based auto-assignment, AI intake, and WhatsApp Cloud API.',
+        tags: ['ASP.NET Core', 'C#', 'React', 'SQL Server', 'AI'],
+      },
+      {
+        name: 'Sterling Grey',
+        summary:
+          'Accounting SaaS backend — multi-company support, Stripe Connect, tiered subscriptions, PDF invoices, and SSO.',
+        tags: ['Node.js', 'TypeScript', 'DynamoDB', 'Stripe'],
+      },
+    ],
   },
   {
-    cat: 'ORM / Query Builders',
-    items: ['Prisma', 'Django ORM', 'Entity Framework Core'],
+    role: 'Full Stack & Backend Engineer',
+    company: 'Freelance',
+    location: 'Lahore',
+    period: 'Jun 2024 — Nov 2025',
+    projects: [
+      {
+        name: 'SocialOneHub Platform',
+        summary:
+          'SaaS social media management — Pexels API, Facebook/Instagram Graph insights, subscription access control, and Twitter management.',
+        tags: ['TypeScript', 'React', 'Next.js', 'Node.js', 'PostgreSQL'],
+      },
+      {
+        name: 'NookTables',
+        summary:
+          'Mobile-first social web app for meeting over coffee in Lahore — open a table, find nearby locals, join the conversation.',
+        tags: ['Next.js', 'TypeScript', 'React'],
+      }
+    ],
   },
   {
-    cat: 'Version Control',
-    items: ['Git', 'GitHub'],
+    role: 'Full Stack Developer',
+    company: 'MB Services FZ LLC',
+    location: 'Dubai',
+    period: 'Sep 2022 — Jun 2024',
+    projects: [
+      {
+        name: 'RecruitMe Workforce SaaS',
+        summary:
+          'US staffing SaaS built from scratch — 15+ microservices, 5k+ workers, automated payroll from mobile check-in/out. Increased agency revenue by up to 30%.',
+        tags: ['Node.js', 'Vue.js', 'PostgreSQL', 'Apache Kafka', 'Redis'],
+      },
+    ],
+  },
+]
+
+export const CONTACT_CHANNELS: ContactChannel[] = [
+  {
+    id: 'email',
+    label: 'Email',
+    value: SITE.email,
+    href: `mailto:${SITE.email}`,
+    hint: 'Click to compose',
+  },
+  {
+    id: 'phone',
+    label: 'Phone / WhatsApp',
+    value: SITE.phoneDisplay,
+    href: `https://wa.me/923184667520`,
+    hint: 'Lahore, Pakistan (GMT+5)',
+  },
+  {
+    id: 'github',
+    label: 'GitHub',
+    value: SITE.githubLabel,
+    href: SITE.github,
+    hint: 'Repositories & Code',
+  },
+  {
+    id: 'linkedin',
+    label: 'LinkedIn',
+    value: SITE.linkedinLabel,
+    href: SITE.linkedin,
+    hint: 'Connect on LinkedIn',
   },
 ]
 

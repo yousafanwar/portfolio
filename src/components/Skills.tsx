@@ -1,30 +1,50 @@
-import { useState } from 'react'
 import { SKILLS } from '../data'
 
-export default function Skills() {
-  const [activeTab, setActiveTab] = useState(0)
+const ICONS: Record<string, string> = {
+  'Languages & Frameworks': '⟨/⟩',
+  'Backend & Architecture': '⬡',
+  'AI & Automation': '◎',
+  'Task Queues & Messaging': '⇄',
+  'Database & Data Layer': '▣',
+  'Real-time, Security & DevOps': '⚙',
+}
 
+export default function Skills() {
   return (
-    <section id="skills">
-      <div className="reveal">
-        <div className="sec-label">
-          <span className="eyebrow-line"></span>Expertise
+    <section id="skills" className="skills-section">
+      <div className="home-container">
+        <div className="reveal">
+          <div className="sec-label">
+            <span className="eyebrow-line" />
+            Technical Proficiency
+          </div>
+          <h2 className="sec-title">Skills &amp; Technology Stack</h2>
         </div>
-        <h2 className="sec-title">What I Work With</h2>
-      </div>
-      <div className="reveal" style={{ transitionDelay: '.1s' }}>
-        <div className="skill-tabs" id="stabs">
-          {SKILLS.map((s, i) => (
-            <button key={s.cat} className={`stab${i === activeTab ? ' active' : ''}`} onClick={() => setActiveTab(i)}>
-              {s.cat}
-            </button>
-          ))}
-        </div>
-        <div className="skill-pills" id="spills">
-          {SKILLS[activeTab].items.map((it, i) => (
-            <div key={it} className="pill" style={{ animation: `fadeUp .35s ease ${i * 0.06}s both` }}>
-              {it}
-            </div>
+
+        <div className="skills-grid">
+          {SKILLS.map((skill, i) => (
+            <article
+              key={skill.cat}
+              className="skill-card reveal"
+              style={{ transitionDelay: `${0.06 + i * 0.05}s` }}
+            >
+              <header className="skill-card-head">
+                <span className="skill-card-icon" aria-hidden="true">
+                  {ICONS[skill.cat] ?? '•'}
+                </span>
+                <h3 className="skill-card-title">{skill.cat}</h3>
+              </header>
+              <div className="skill-pills">
+                {skill.items.map((item) => {
+                  const isAccent = skill.accent?.includes(item)
+                  return (
+                    <span key={item} className={`tech-badge${isAccent ? ' accent' : ''}`}>
+                      {item}
+                    </span>
+                  )
+                })}
+              </div>
+            </article>
           ))}
         </div>
       </div>

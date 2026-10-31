@@ -12,6 +12,7 @@ export type DetailId =
 export type SkillCategory = {
   cat: string
   items: string[]
+  accent?: string[]
 }
 
 export type Project = {
@@ -22,4 +23,32 @@ export type Project = {
   repo: string | null
   link: string | null
   detail: DetailId | null
+}
+
+export type ExperienceProject = {
+  name: string
+  summary: string
+  tags: string[]
+}
+
+export type Experience = {
+  role: string
+  company: string
+  location: string
+  period: string
+  projects: ExperienceProject[]
+}
+
+export type Stat = {
+  value: string
+  label: string
+  detail: string
+}
+
+export type ContactChannel = {
+  id: string
+  label: string
+  value: string
+  href: string
+  hint: string
 }
