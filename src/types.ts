@@ -54,3 +54,71 @@ export type ContactChannel = {
   href: string
   hint: string
 }
+
+export type ProjectMedia =
+  | {
+      type: 'image'
+      src: string
+      thumb?: string
+      caption: string
+    }
+  | {
+      type: 'embed'
+      src: string
+      caption: string
+    }
+
+export type ProjectDetailAction = {
+  label: string
+  href: string
+  primary?: boolean
+}
+
+export type ProjectDetailStat = {
+  value: string
+  label: string
+}
+
+export type ProjectTechItem = {
+  name: string
+  role: string
+}
+
+export type ProjectHighlight = {
+  title: string
+  text: string
+}
+
+export type ProjectLayer = {
+  name: string
+  detail: string
+  accent?: boolean
+}
+
+export type ProjectDetailContent = {
+  id: DetailId
+  eyebrow: string
+  title: string
+  titleAccent?: string
+  tagline: string
+  tags: string[]
+  badge?: string
+  actions: ProjectDetailAction[]
+  stats: ProjectDetailStat[]
+  overviewTitle: string
+  overview: string[]
+  featuresTitle: string
+  features: string[]
+  sideTitle: string
+  sideText: string[]
+  layers?: ProjectLayer[]
+  tech: ProjectTechItem[]
+  highlights?: ProjectHighlight[]
+  live?: {
+    label: string
+    url: string
+    sub: string
+    href: string
+  }
+  media: ProjectMedia[]
+}
