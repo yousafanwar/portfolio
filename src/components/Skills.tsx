@@ -25,24 +25,39 @@ export default function Skills() {
           {SKILLS.map((skill, i) => (
             <article
               key={skill.cat}
-              className="skill-card reveal"
+              className="skill-flip reveal"
               style={{ transitionDelay: `${0.06 + i * 0.05}s` }}
             >
-              <header className="skill-card-head">
-                <span className="skill-card-icon" aria-hidden="true">
-                  {ICONS[skill.cat] ?? '•'}
-                </span>
-                <h3 className="skill-card-title">{skill.cat}</h3>
-              </header>
-              <div className="skill-pills">
-                {skill.items.map((item) => {
-                  const isAccent = skill.accent?.includes(item)
-                  return (
-                    <span key={item} className={`tech-badge${isAccent ? ' accent' : ''}`}>
-                      {item}
-                    </span>
-                  )
-                })}
+              <div className="skill-card">
+                <div className="skill-card-inner">
+                  <div className="skill-face skill-face-front">
+                    <header className="skill-card-head skill-card-head-front">
+                      <span className="skill-card-icon" aria-hidden="true">
+                        {ICONS[skill.cat] ?? '•'}
+                      </span>
+                      <h3 className="skill-card-title">{skill.cat}</h3>
+                    </header>
+                  </div>
+
+                  <div className="skill-face skill-face-back">
+                    <header className="skill-card-head">
+                      <span className="skill-card-icon" aria-hidden="true">
+                        {ICONS[skill.cat] ?? '•'}
+                      </span>
+                      <h3 className="skill-card-title">{skill.cat}</h3>
+                    </header>
+                    <div className="skill-pills">
+                      {skill.items.map((item) => {
+                        const isAccent = skill.accent?.includes(item)
+                        return (
+                          <span key={item} className={`tech-badge${isAccent ? ' accent' : ''}`}>
+                            {item}
+                          </span>
+                        )
+                      })}
+                    </div>
+                  </div>
+                </div>
               </div>
             </article>
           ))}
