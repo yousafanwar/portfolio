@@ -2,7 +2,7 @@ import Projects from '../components/Projects'
 
 export default function ProjectsPage() {
   return (
-    <div className="page-pad">
+    <div className="page-pad projects-route">
       <Projects />
     </div>
   )

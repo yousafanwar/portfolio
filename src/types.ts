@@ -17,8 +17,11 @@ export type SkillCategory = {
 export type Project = {
   id: string
   name: string
+  category: string
   desc: string
   tags: string[]
+  /** Tags rendered with solid lime fill (primary stack signal). */
+  highlightTags?: string[]
   repo: string | null
   link: string | null
   detail: DetailId | null
