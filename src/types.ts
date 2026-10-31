@@ -1,4 +1,5 @@
 export type DetailId =
+  | 'etmp'
   | 'nooktables'
   | 'authforge'
   | 'ecp'

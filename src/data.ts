@@ -64,6 +64,15 @@ export const SKILLS: SkillCategory[] = [
 
 export const PROJECTS: Project[] = [
   {
+    id: 'etmp',
+    name: 'ETMP',
+    desc: 'Full-stack enterprise task platform with Clean Architecture .NET API + React SPA — skills-based auto-assignment, JWT refresh rotation, AI feedback→task intake (Gemini/OpenAI), WhatsApp Cloud API, Docker & CI/CD. Public backend & frontend repos.',
+    tags: ['ASP.NET Core', 'C#', 'React', 'SQL Server', 'AI', 'WhatsApp'],
+    repo: 'https://github.com/yousafanwar/EnterpriseTaskManagement',
+    link: 'https://projectmanagementfrontend.omnisoft.info',
+    detail: 'etmp',
+  },
+  {
     id: 'nooktables',
     name: 'NookTables',
     desc: 'Mobile-first social app for meeting over coffee in Lahore — open a table, find nearby locals, and join the conversation. Next.js web app live at nooktables.app. Built as a client project.',
