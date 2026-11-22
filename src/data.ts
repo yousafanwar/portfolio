@@ -72,8 +72,7 @@ export const SKILLS: SkillCategory[] = [
     items: [
       'Vision-LLM Integration',
       'Agent Architecture (Observe-Think-Act)',
-      'Playwright',
-      'PyAutoGUI',
+      'Playwright'
     ],
   },
   {
