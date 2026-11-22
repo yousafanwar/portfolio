@@ -120,7 +120,7 @@ export const EXPERIENCE: Experience[] = [
         tags: ['Django', 'Celery', 'Redis', 'PostgreSQL', 'Firebase FCM'],
       },
       {
-        name: 'ETMP — Enterprise Task Platform ==> Replace this with Carspot NL',
+        name: 'ETMP',
         summary:
           'Full-stack enterprise task platform with Clean Architecture .NET API + React SPA — skills-based auto-assignment, AI intake, and WhatsApp Cloud API.',
         tags: ['ASP.NET Core', 'C#', 'React', 'SQL Server', 'AI'],
