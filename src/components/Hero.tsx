@@ -26,7 +26,7 @@ export default function Hero() {
 
         <p className="hero-bio">
           4+ years shipping secure, scalable systems in Django, NestJS, Next.js, and Node.js —
-          backends that hold up under load and serve <strong>3.5M+</strong> users in production.
+          backends that hold up under load and serve <strong>4M+</strong> users in production.
         </p>
 
         <div className="hero-btns">
