@@ -23,7 +23,7 @@ function Badge({ children }: { children: ReactNode }) {
 export default function ProjectDetailLayout({ detail }: { detail: ProjectDetailContent }) {
   const [galleryOpen, setGalleryOpen] = useState(false)
   const [galleryIndex, setGalleryIndex] = useState(0)
-  const hasMedia = detail.media.length > 0
+  const showGallery = detail.gallery && detail.media.length > 0
 
   const openGallery = (index = 0) => {
     setGalleryIndex(index)
@@ -71,7 +71,7 @@ export default function ProjectDetailLayout({ detail }: { detail: ProjectDetailC
                 {a.label}
               </a>
             ))}
-            {hasMedia && (
+            {showGallery && (
               <button type="button" className="btn-s pd-gallery-btn" onClick={() => openGallery(0)}>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                   <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" strokeWidth="1.75" />
@@ -185,7 +185,7 @@ export default function ProjectDetailLayout({ detail }: { detail: ProjectDetailC
           </div>
         )}
 
-        {hasMedia && (
+        {showGallery && (
           <section className="pd-media-strip">
             <div className="pd-media-strip-head">
               <div>
@@ -232,7 +232,7 @@ export default function ProjectDetailLayout({ detail }: { detail: ProjectDetailC
               {a.label}
             </a>
           ))}
-          {hasMedia && (
+          {showGallery && (
             <button type="button" className="btn-s" onClick={() => openGallery(0)}>
               Gallery
             </button>
@@ -240,13 +240,15 @@ export default function ProjectDetailLayout({ detail }: { detail: ProjectDetailC
         </div>
       </footer>
 
-      <MediaGalleryDialog
-        open={galleryOpen}
-        onClose={() => setGalleryOpen(false)}
-        title={detail.title}
-        media={detail.media}
-        initialIndex={galleryIndex}
-      />
+      {showGallery && (
+        <MediaGalleryDialog
+          open={galleryOpen}
+          onClose={() => setGalleryOpen(false)}
+          title={detail.title}
+          media={detail.media}
+          initialIndex={galleryIndex}
+        />
+      )}
     </div>
   )
 }

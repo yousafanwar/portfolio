@@ -120,5 +120,7 @@ export type ProjectDetailContent = {
     sub: string
     href: string
   }
+  /** When false, gallery button, media strip, and dialog are hidden. */
+  gallery: boolean
   media: ProjectMedia[]
 }

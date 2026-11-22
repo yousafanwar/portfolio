@@ -100,6 +100,7 @@ export const PROJECT_DETAILS_CONTENT: Record<DetailId, ProjectDetailContent> = {
         text: 'Single shared refresh promise prevents concurrent token races; failed refresh clears the session.',
       },
     ],
+    gallery: true,
     media: shots('etmp', [
       'Dashboard overview (placeholder)',
       'AI Copilot task intake (placeholder)',
@@ -157,6 +158,7 @@ export const PROJECT_DETAILS_CONTENT: Record<DetailId, ProjectDetailContent> = {
       sub: 'Coffee meetups · Lahore · Open a table, join the conversation',
       href: 'https://nooktables.app/',
     },
+    gallery: true,
     media: shots('nook', [
       'Mobile home feed (placeholder)',
       'Open a table flow (placeholder)',
@@ -169,7 +171,7 @@ export const PROJECT_DETAILS_CONTENT: Record<DetailId, ProjectDetailContent> = {
     id: 'ecp',
     eyebrow: 'Client · E-commerce',
     title: 'BirdBuzz',
-    titleAccent: 'ECP Store',
+    titleAccent: 'AY Traderz',
     tagline:
       'Full-stack e-commerce for bird supplies — catalog, cart, checkout, JWT auth. NestJS + Next.js monorepo at aytraders.com.',
     tags: ['NestJS', 'Next.js', 'TypeScript', 'PostgreSQL', 'Tailwind', 'Cloudinary', 'JWT'],
@@ -218,6 +220,7 @@ export const PROJECT_DETAILS_CONTENT: Record<DetailId, ProjectDetailContent> = {
       sub: 'Bird supplies · Catalog · Cart · Checkout',
       href: 'https://aytraders.com/',
     },
+    gallery: true,
     media: shots('ecp', [
       'Storefront catalog (placeholder)',
       'Product detail page (placeholder)',
@@ -278,6 +281,7 @@ export const PROJECT_DETAILS_CONTENT: Record<DetailId, ProjectDetailContent> = {
       sub: 'Swagger UI · Interactive endpoints · Always on',
       href: 'https://auth.aytraders.com/api/docs',
     },
+    gallery: true,
     media: [
       {
         type: 'embed',
@@ -294,7 +298,7 @@ export const PROJECT_DETAILS_CONTENT: Record<DetailId, ProjectDetailContent> = {
 
   mira: {
     id: 'mira',
-    eyebrow: 'Omnisoft · 3.5M+ Users',
+    eyebrow: 'Omnisoft · 4M+ Users',
     title: 'Mirex',
     titleAccent: 'Network Backend',
     tagline:
@@ -346,6 +350,7 @@ export const PROJECT_DETAILS_CONTENT: Record<DetailId, ProjectDetailContent> = {
       { name: 'Celery', role: 'Background Jobs' },
       { name: 'Firebase FCM', role: 'Push' },
     ],
+    gallery: true,
     media: shots('mira', [
       'Mining session dashboard (placeholder)',
       'Airdrop campaign admin (placeholder)',
@@ -399,6 +404,7 @@ export const PROJECT_DETAILS_CONTENT: Record<DetailId, ProjectDetailContent> = {
       { name: 'Swagger', role: 'Docs' },
       { name: 'Jest', role: 'Testing' },
     ],
+    gallery: false,
     media: shots('unity', [
       'Leaderboard API response (placeholder)',
       'Event lifecycle admin (placeholder)',
@@ -453,6 +459,7 @@ export const PROJECT_DETAILS_CONTENT: Record<DetailId, ProjectDetailContent> = {
       { name: 'JWT', role: 'Auth' },
       { name: 'AWS SES', role: 'Email' },
     ],
+    gallery: false,
     media: shots('sterling', [
       'Invoice PDF preview (placeholder)',
       'Multi-company switcher (placeholder)',
@@ -508,6 +515,7 @@ export const PROJECT_DETAILS_CONTENT: Record<DetailId, ProjectDetailContent> = {
       { name: 'PostgreSQL', role: 'Primary DB' },
       { name: 'MongoDB', role: 'Activity Logs' },
     ],
+    gallery: false,
     media: shots('recruit', [
       'Agency dashboard (placeholder)',
       'Worker mobile check-in (placeholder)',
@@ -562,6 +570,7 @@ export const PROJECT_DETAILS_CONTENT: Record<DetailId, ProjectDetailContent> = {
       { name: 'PostgreSQL', role: 'Database' },
       { name: 'Graph API', role: 'Insights' },
     ],
+    gallery: false,
     media: shots('social', [
       'Unified social dashboard (placeholder)',
       'Pexels media search (placeholder)',
