@@ -226,7 +226,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 'ecp',
-    name: 'ECP — Bird Buzz',
+    name: 'E-commerce Store',
     category: 'E-commerce',
     desc: 'Full-stack e-commerce for bird supplies — catalog, cart, checkout, and JWT auth. NestJS backend + Next.js storefront at aytraders.com.',
     tags: ['Next.js', 'TypeScript', 'PostgreSQL', 'Node.js'],

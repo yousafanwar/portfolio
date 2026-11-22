@@ -1,5 +1,43 @@
 import type { DetailId, ProjectDetailContent, ProjectMedia } from './types'
 
+import etmp01 from './assets/etmp/01-dashboard.png'
+import etmp02 from './assets/etmp/02-projects.png'
+import etmp03 from './assets/etmp/03-my-tasks.png'
+import etmp04 from './assets/etmp/04-create-task.png'
+import etmp05 from './assets/etmp/05-task-detail.png'
+import etmp06 from './assets/etmp/06-team-users.png'
+import etmp07 from './assets/etmp/07-member-actions.png'
+
+import mira01 from './assets/mirex/01-lock-hub.jpeg'
+import mira02 from './assets/mirex/02-mining-home.jpeg'
+import mira03 from './assets/mirex/03-mining-team.jpeg'
+import mira04 from './assets/mirex/04-tokenization-events.jpeg'
+import mira05 from './assets/mirex/05-games-hub.jpeg'
+import mira06 from './assets/mirex/06-spin-win.jpeg'
+import mira07 from './assets/mirex/07-ecosystem.jpeg'
+import mira08 from './assets/mirex/08-news.jpeg'
+import mira09 from './assets/mirex/09-notifications.jpeg'
+import mira10 from './assets/mirex/10-settings.jpeg'
+
+import nook01 from './assets/nooktables/01-splash.jpeg'
+import nook02 from './assets/nooktables/02-email-onboard.jpeg'
+import nook03 from './assets/nooktables/03-otp-verify.jpeg'
+import nook04 from './assets/nooktables/04-map-home.jpeg'
+import nook05 from './assets/nooktables/05-pick-cafe.jpeg'
+import nook06 from './assets/nooktables/06-seat-count.jpeg'
+import nook07 from './assets/nooktables/07-vibe-topic.jpeg'
+import nook08 from './assets/nooktables/08-bill-split.jpeg'
+import nook09 from './assets/nooktables/09-bill-ill-pay.jpeg'
+import nook10 from './assets/nooktables/10-table-live.jpeg'
+import nook11 from './assets/nooktables/11-open-tables.jpeg'
+import nook12 from './assets/nooktables/12-request-join.jpeg'
+import nook13 from './assets/nooktables/13-table-detail.jpeg'
+import nook14 from './assets/nooktables/14-accepted-chat.jpeg'
+import nook15 from './assets/nooktables/15-pending-requests.jpeg'
+import nook16 from './assets/nooktables/16-table-chat.jpeg'
+import nook17 from './assets/nooktables/17-notifications.jpeg'
+import nook18 from './assets/nooktables/18-profile.jpeg'
+
 function shots(id: string, captions: string[]): ProjectMedia[] {
   return captions.map((caption, i) => ({
     type: 'image' as const,
@@ -8,6 +46,50 @@ function shots(id: string, captions: string[]): ProjectMedia[] {
     caption,
   }))
 }
+
+const ETMP_MEDIA: ProjectMedia[] = [
+  { type: 'image', src: etmp01, caption: 'Dashboard — projects, metrics & urgent actions' },
+  { type: 'image', src: etmp02, caption: 'Projects grid — status, progress & owners' },
+  { type: 'image', src: etmp03, caption: 'My Tasks — assigned work list' },
+  { type: 'image', src: etmp04, caption: 'Create task — AI Auto-Draft intake' },
+  { type: 'image', src: etmp05, caption: 'Task detail — status, assignee & history' },
+  { type: 'image', src: etmp06, caption: 'Team & Users directory' },
+  { type: 'image', src: etmp07, caption: 'Member actions — roles, skills & access' },
+]
+
+const MIRA_MEDIA: ProjectMedia[] = [
+  { type: 'image', src: mira01, caption: 'Lock hub — Cloud-Mining, RWA & Airdrop' },
+  { type: 'image', src: mira02, caption: 'Mining home — rate, team & daily rewards' },
+  { type: 'image', src: mira03, caption: 'Mining team — active & inactive members' },
+  { type: 'image', src: mira04, caption: 'Tokenization events feed' },
+  { type: 'image', src: mira05, caption: 'Games hub — Spin & Win + Unity titles' },
+  { type: 'image', src: mira06, caption: 'Daily Spin & Win rewards' },
+  { type: 'image', src: mira07, caption: 'Ecosystem companies gallery' },
+  { type: 'image', src: mira08, caption: 'News & community updates' },
+  { type: 'image', src: mira09, caption: 'Notification center' },
+  { type: 'image', src: mira10, caption: 'Settings — KYC, team & $MRX' },
+]
+
+const NOOKTABLES_MEDIA: ProjectMedia[] = [
+  { type: 'image', src: nook01, caption: 'Brand splash — Nook Tables' },
+  { type: 'image', src: nook02, caption: 'Email onboarding' },
+  { type: 'image', src: nook03, caption: 'Inbox OTP verification' },
+  { type: 'image', src: nook04, caption: 'Map home — Lahore tables nearby' },
+  { type: 'image', src: nook05, caption: 'Open a table — pick a café' },
+  { type: 'image', src: nook06, caption: 'Seat count setup' },
+  { type: 'image', src: nook07, caption: 'Choose the vibe / topic' },
+  { type: 'image', src: nook08, caption: 'Coffee bill — split option' },
+  { type: 'image', src: nook09, caption: 'Coffee bill — host pays' },
+  { type: 'image', src: nook10, caption: 'Table is live confirmation' },
+  { type: 'image', src: nook11, caption: 'Open tables feed with filters' },
+  { type: 'image', src: nook12, caption: 'Request to join a table' },
+  { type: 'image', src: nook13, caption: 'Table detail sheet' },
+  { type: 'image', src: nook14, caption: 'Accepted — table chat preview' },
+  { type: 'image', src: nook15, caption: 'Host view — pending join requests' },
+  { type: 'image', src: nook16, caption: 'Table chat with quick replies' },
+  { type: 'image', src: nook17, caption: 'Notifications feed' },
+  { type: 'image', src: nook18, caption: 'Profile — drinks, time & stats' },
+]
 
 export const PROJECT_DETAILS_CONTENT: Record<DetailId, ProjectDetailContent> = {
   etmp: {
@@ -101,12 +183,7 @@ export const PROJECT_DETAILS_CONTENT: Record<DetailId, ProjectDetailContent> = {
       },
     ],
     gallery: true,
-    media: shots('etmp', [
-      'Dashboard overview (placeholder)',
-      'AI Copilot task intake (placeholder)',
-      'Project board & assignments (placeholder)',
-      'WhatsApp intake flow (placeholder)',
-    ]),
+    media: ETMP_MEDIA,
   },
 
   nooktables: {
@@ -152,26 +229,20 @@ export const PROJECT_DETAILS_CONTENT: Record<DetailId, ProjectDetailContent> = {
       { name: 'Mobile Web', role: 'Primary Surface' },
       { name: 'nginx', role: 'Reverse Proxy' },
     ],
-    live: {
-      label: 'Live Product',
-      url: 'nooktables.app',
-      sub: 'Coffee meetups · Lahore · Open a table, join the conversation',
-      href: 'https://nooktables.app/',
-    },
+    // live: {
+    //   label: 'Live Product',
+    //   url: 'nooktables.app',
+    //   sub: 'Coffee meetups · Lahore · Open a table, join the conversation',
+    //   href: 'https://nooktables.app/',
+    // },
     gallery: true,
-    media: shots('nook', [
-      'Mobile home feed (placeholder)',
-      'Open a table flow (placeholder)',
-      'Nearby tables map (placeholder)',
-      'Desktop QR landing (placeholder)',
-    ]),
+    media: NOOKTABLES_MEDIA,
   },
 
   ecp: {
     id: 'ecp',
     eyebrow: 'Client · E-commerce',
-    title: 'BirdBuzz',
-    titleAccent: 'AY Traderz',
+    title: 'E-commerce Store',
     tagline:
       'Full-stack e-commerce for bird supplies — catalog, cart, checkout, JWT auth. NestJS + Next.js monorepo at aytraders.com.',
     tags: ['NestJS', 'Next.js', 'TypeScript', 'PostgreSQL', 'Tailwind', 'Cloudinary', 'JWT'],
@@ -182,7 +253,7 @@ export const PROJECT_DETAILS_CONTENT: Record<DetailId, ProjectDetailContent> = {
       { value: 'Live', label: 'Production Deployed' },
       { value: 'Full', label: 'Auth + Cart + Orders' },
     ],
-    overviewTitle: 'What is ECP Bird Buzz?',
+    overviewTitle: '',
     overview: [
       'E-commerce for bird products covering the full journey: browse with filters, cart, authenticate, and place orders.',
       'Monorepo with NestJS (auth, products, cart, orders) and a Next.js App Router storefront. Images via Cloudinary CDN.',
@@ -214,13 +285,13 @@ export const PROJECT_DETAILS_CONTENT: Record<DetailId, ProjectDetailContent> = {
       { name: 'Cloudinary', role: 'Media' },
       { name: 'JWT', role: 'Auth' },
     ],
-    live: {
-      label: 'Live Store',
-      url: 'aytraders.com',
-      sub: 'Bird supplies · Catalog · Cart · Checkout',
-      href: 'https://aytraders.com/',
-    },
-    gallery: true,
+    // live: {
+    //   label: 'Live Store',
+    //   url: 'aytraders.com',
+    //   sub: 'Bird supplies · Catalog · Cart · Checkout',
+    //   href: 'https://aytraders.com/',
+    // },
+    gallery: false,
     media: shots('ecp', [
       'Storefront catalog (placeholder)',
       'Product detail page (placeholder)',
@@ -275,13 +346,13 @@ export const PROJECT_DETAILS_CONTENT: Record<DetailId, ProjectDetailContent> = {
       { name: 'Docker', role: 'Dev Env' },
       { name: 'Passport', role: 'Strategies' },
     ],
-    live: {
-      label: 'Live API Docs',
-      url: 'auth.aytraders.com/api/docs',
-      sub: 'Swagger UI · Interactive endpoints · Always on',
-      href: 'https://auth.aytraders.com/api/docs',
-    },
-    gallery: true,
+    // live: {
+    //   label: 'Live API Docs',
+    //   url: 'auth.aytraders.com/api/docs',
+    //   sub: 'Swagger UI · Interactive endpoints · Always on',
+    //   href: 'https://auth.aytraders.com/api/docs',
+    // },
+    gallery: false,
     media: [
       {
         type: 'embed',
@@ -351,12 +422,7 @@ export const PROJECT_DETAILS_CONTENT: Record<DetailId, ProjectDetailContent> = {
       { name: 'Firebase FCM', role: 'Push' },
     ],
     gallery: true,
-    media: shots('mira', [
-      'Mining session dashboard (placeholder)',
-      'Airdrop campaign admin (placeholder)',
-      'FCM topic architecture (placeholder)',
-      'Fraud detection alerts (placeholder)',
-    ]),
+    media: MIRA_MEDIA,
   },
 
   unitygames: {
