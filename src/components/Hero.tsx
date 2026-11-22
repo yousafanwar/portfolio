@@ -1,36 +1,47 @@
 import { Link } from 'react-router-dom'
+import { SITE } from '../data'
 
 export default function Hero() {
   return (
     <section className="hero" id="hero">
-      <div className="hero-grid"></div>
-      <div className="hero-glow"></div>
-      <div style={{ position: 'relative', zIndex: 1, maxWidth: 860 }}>
-        <div className="eyebrow">
-          <span className="eyebrow-line"></span>Available for Freelance
+      <div className="hero-grid" aria-hidden="true" />
+      <div className="hero-glow" aria-hidden="true" />
+
+      <div className="hero-main">
+        <div className="status-pill">
+          <span className="status-dot" aria-hidden="true" />
+          <span>{SITE.availability}</span>
         </div>
-        <h1>
-          Yousaf
-          <br />
-          <span>Anwar</span> Ali
+
+        <h1 className="hero-title">
+          Yousaf <span>Anwar</span> Ali
         </h1>
-        <p className="hero-sub">Backend-Focused Full Stack Developer</p>
-        <p className="hero-bio">
-          4+ years building secure, scalable backend systems for real-world SaaS products. From microservices to
-          production APIs — I make backends that don&apos;t break.
+
+        <p className="hero-sub">
+          <span className="hero-prompt" aria-hidden="true">
+            &gt;
+          </span>{' '}
+          {SITE.role}
         </p>
+
+        <p className="hero-bio">
+          4+ years shipping secure, scalable systems in Django, NestJS, Next.js, and Node.js —
+          backends that hold up under load and serve <strong>3.5M+</strong> users in production.
+        </p>
+
         <div className="hero-btns">
           <Link to="/contact" className="btn-p">
-            Let&apos;s Work Together
+            Get In Touch <span aria-hidden="true">→</span>
           </Link>
-          <Link to="/projects" className="btn-s">
-            View Projects
-          </Link>
+          <a
+            href={SITE.github}
+            className="btn-s"
+            target="_blank"
+            rel="noreferrer"
+          >
+            View Resume / GitHub
+          </a>
         </div>
-      </div>
-      <div className="hero-badge">
-        <div className="badge-num">4+</div>
-        <div className="badge-lbl">Years Experience</div>
       </div>
     </section>
   )

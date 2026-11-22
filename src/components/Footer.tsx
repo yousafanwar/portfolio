@@ -1,8 +1,12 @@
 export default function Footer() {
   return (
     <footer>
-      <span className="ft">© 2026 — Yousaf Anwar Ali</span>
+      <span className="ft ft-brand">
+        <span className="ft-dot" aria-hidden="true" />
+        Yousaf Anwar Ali | Backend &amp; Full Stack Engineer
+      </span>
       <div className="fl">
+        <span className="ft">© {new Date().getFullYear()}</span>
         <a href="https://github.com/yousafanwar" target="_blank" rel="noreferrer">
           GitHub
         </a>

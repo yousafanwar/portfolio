@@ -9,8 +9,9 @@ export default function RootLayout() {
   const contentRef = useReveal([location.pathname, location.key])
 
   useEffect(() => {
+    if (location.hash) return
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
-  }, [location.pathname, location.key])
+  }, [location.pathname, location.key, location.hash])
 
   return (
     <>
