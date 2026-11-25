@@ -3,6 +3,7 @@ import { SITE } from '../data'
 
 export default function Hero() {
   return (
+    // trigger rerun
     <section className="hero" id="hero">
       <div className="hero-grid" aria-hidden="true" />
       <div className="hero-glow" aria-hidden="true" />
