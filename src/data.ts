@@ -23,7 +23,7 @@ export const SITE = {
 
 export const STATS: Stat[] = [
   {
-    value: '4M+',
+    value: '3.5M+',
     label: 'Users Served',
     detail: 'Mirex Network Platform',
   },

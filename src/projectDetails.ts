@@ -369,7 +369,7 @@ export const PROJECT_DETAILS_CONTENT: Record<DetailId, ProjectDetailContent> = {
 
   mira: {
     id: 'mira',
-    eyebrow: 'Omnisoft · 4M+ Users',
+    eyebrow: 'Omnisoft · 3.5M+ Users',
     title: 'Mirex',
     titleAccent: 'Network Backend',
     tagline:
