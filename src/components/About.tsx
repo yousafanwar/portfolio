@@ -91,9 +91,9 @@ export default function About() {
                     </div>
                     <div style={{ fontFamily: '\'Space Mono\',monospace', fontSize: '.62rem', color: 'var(--label)', letterSpacing: '.05em', whiteSpace: 'nowrap' }}>Nov 2025 — Present</div>
                   </div>
-                  <p style={{ fontSize: '.83rem', color: 'var(--muted-dim)', lineHeight: 1.7, marginTop: '.9rem' }}>Building and optimising scalable backend services for production platforms serving millions of users. Work includes real-time systems, notification infrastructure, game integrations, and accounting SaaS backends.</p>
+                  <p style={{ fontSize: '.83rem', color: 'var(--muted-dim)', lineHeight: 1.7, marginTop: '.9rem' }}>Building and optimising production backends used at scale. Work includes Mirex notification delivery and reward integrity for 3.5M+ users, a NestJS and BullMQ bridge for Unity games, and an AI filing agent for government portal automation.</p>
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '.4rem', marginTop: '.9rem' }}>
-                    <span className="ptag" style={{ fontSize: '.62rem' }}>Django</span><span className="ptag" style={{ fontSize: '.62rem' }}>NestJS</span><span className="ptag" style={{ fontSize: '.62rem' }}>Node.js</span><span className="ptag" style={{ fontSize: '.62rem' }}>PostgreSQL</span><span className="ptag" style={{ fontSize: '.62rem' }}>Redis</span>
+                    <span className="ptag" style={{ fontSize: '.62rem' }}>Django</span><span className="ptag" style={{ fontSize: '.62rem' }}>NestJS</span><span className="ptag" style={{ fontSize: '.62rem' }}>PostgreSQL</span><span className="ptag" style={{ fontSize: '.62rem' }}>Redis</span><span className="ptag" style={{ fontSize: '.62rem' }}>BullMQ</span><span className="ptag" style={{ fontSize: '.62rem' }}>FastAPI</span>
                   </div>
                 </div>
 
@@ -103,11 +103,11 @@ export default function About() {
                       <div style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--text)' }}>Full Stack Web Developer</div>
                       <div style={{ fontFamily: '\'Space Mono\',monospace', fontSize: '.65rem', color: 'var(--lime)', marginTop: '.3rem', letterSpacing: '.05em' }}>Freelance · Lahore</div>
                     </div>
-                    <div style={{ fontFamily: '\'Space Mono\',monospace', fontSize: '.62rem', color: 'var(--label)', letterSpacing: '.05em', whiteSpace: 'nowrap' }}>Jun 2024 — Nov 2025</div>
+                    <div style={{ fontFamily: '\'Space Mono\',monospace', fontSize: '.62rem', color: 'var(--label)', letterSpacing: '.05em', whiteSpace: 'nowrap' }}>Jul 2024 — Nov 2025</div>
                   </div>
-                  <p style={{ fontSize: '.83rem', color: 'var(--muted-dim)', lineHeight: 1.7, marginTop: '.9rem' }}>Contributed to SocialOneHub, a SaaS social media management platform — integrating Pexels API, Facebook/Instagram Graph API insights, infinite scrolling, and subscription-based access control.</p>
+                  <p style={{ fontSize: '.83rem', color: 'var(--muted-dim)', lineHeight: 1.7, marginTop: '.9rem' }}>Built SocialOneHub, a SaaS social media management platform — Pexels search, Facebook/Instagram Graph API insights, infinite scrolling, subscription access control, Hangfire jobs, and SignalR updates on ASP.NET Core.</p>
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '.4rem', marginTop: '.9rem' }}>
-                    <span className="ptag" style={{ fontSize: '.62rem' }}>TypeScript</span><span className="ptag" style={{ fontSize: '.62rem' }}>React</span><span className="ptag" style={{ fontSize: '.62rem' }}>Next.js</span><span className="ptag" style={{ fontSize: '.62rem' }}>Node.js</span><span className="ptag" style={{ fontSize: '.62rem' }}>PostgreSQL</span>
+                    <span className="ptag" style={{ fontSize: '.62rem' }}>ASP.NET Core</span><span className="ptag" style={{ fontSize: '.62rem' }}>C#</span><span className="ptag" style={{ fontSize: '.62rem' }}>SQL Server</span><span className="ptag" style={{ fontSize: '.62rem' }}>Hangfire</span><span className="ptag" style={{ fontSize: '.62rem' }}>SignalR</span><span className="ptag" style={{ fontSize: '.62rem' }}>React</span><span className="ptag" style={{ fontSize: '.62rem' }}>Next.js</span>
                   </div>
                 </div>
 
@@ -121,7 +121,7 @@ export default function About() {
                   </div>
                   <p style={{ fontSize: '.83rem', color: 'var(--muted-dim)', lineHeight: 1.7, marginTop: '.9rem' }}>Built RecruitMe from scratch — a US-based SaaS workforce management system with 15+ microservices, serving 5k+ workers and 50+ businesses. Increased agency revenue by up to 30%.</p>
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '.4rem', marginTop: '.9rem' }}>
-                    <span className="ptag" style={{ fontSize: '.62rem' }}>Node.js</span><span className="ptag" style={{ fontSize: '.62rem' }}>Vue.js</span><span className="ptag" style={{ fontSize: '.62rem' }}>PostgreSQL</span><span className="ptag" style={{ fontSize: '.62rem' }}>Microservices</span>
+                    <span className="ptag" style={{ fontSize: '.62rem' }}>NestJS</span><span className="ptag" style={{ fontSize: '.62rem' }}>Node.js</span><span className="ptag" style={{ fontSize: '.62rem' }}>React.js</span><span className="ptag" style={{ fontSize: '.62rem' }}>Vue.js</span><span className="ptag" style={{ fontSize: '.62rem' }}>PostgreSQL</span><span className="ptag" style={{ fontSize: '.62rem' }}>Apache Kafka</span><span className="ptag" style={{ fontSize: '.62rem' }}>Redis</span>
                   </div>
                 </div>
 

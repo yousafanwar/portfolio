@@ -8,6 +8,7 @@ export type DetailId =
   | 'sterlinggrey'
   | 'recruitme'
   | 'socialonehub'
+  | 'aifiling'
 
 export type SkillCategory = {
   cat: string

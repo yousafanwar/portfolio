@@ -8,6 +8,7 @@ import UnityGames from '../components/details/UnityGames'
 import SterlingGrey from '../components/details/SterlingGrey'
 import RecruitMe from '../components/details/RecruitMe'
 import SocialOneHub from '../components/details/SocialOneHub'
+import AiFiling from '../components/details/AiFiling'
 import type { DetailId } from '../types'
 
 export const PROJECT_DETAILS: Record<DetailId, ComponentType> = {
@@ -20,6 +21,7 @@ export const PROJECT_DETAILS: Record<DetailId, ComponentType> = {
   sterlinggrey: SterlingGrey,
   recruitme: RecruitMe,
   socialonehub: SocialOneHub,
+  aifiling: AiFiling,
 }
 
 const DETAIL_IDS = Object.keys(PROJECT_DETAILS) as DetailId[]
