@@ -167,6 +167,20 @@ export const EXPERIENCE: Experience[] = [
       },
     ],
   },
+  {
+    role: 'Front End Developer',
+    company: 'Amerald (Pvt.) Ltd',
+    location: 'Remote',
+    period: 'Feb 2022 — Jul 2022',
+    projects: [
+      {
+        name: 'Web Applications',
+        summary:
+          'Built responsive, user-friendly interfaces using React.js, Vue.js, and Materialize CSS, collaborating with cross-functional teams to deliver polished web applications.',
+        tags: ['JavaScript', 'Vue.js', 'React.js', 'Bootstrap', 'MaterializeCSS'],
+      },
+    ],
+  },
 ]
 
 export const CONTACT_CHANNELS: ContactChannel[] = [

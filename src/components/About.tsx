@@ -129,13 +129,13 @@ export default function About() {
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '1rem', flexWrap: 'wrap' }}>
                     <div>
                       <div style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--text)' }}>Front End Developer</div>
-                      <div style={{ fontFamily: '\'Space Mono\',monospace', fontSize: '.65rem', color: 'var(--lime)', marginTop: '.3rem', letterSpacing: '.05em' }}>Amerald (Pvt.) Ltd · Karachi</div>
+                      <div style={{ fontFamily: '\'Space Mono\',monospace', fontSize: '.65rem', color: 'var(--lime)', marginTop: '.3rem', letterSpacing: '.05em' }}>Amerald (Pvt.) Ltd · Remote</div>
                     </div>
                     <div style={{ fontFamily: '\'Space Mono\',monospace', fontSize: '.62rem', color: 'var(--label)', letterSpacing: '.05em', whiteSpace: 'nowrap' }}>Feb 2022 — Jul 2022</div>
                   </div>
                   <p style={{ fontSize: '.83rem', color: 'var(--muted-dim)', lineHeight: 1.7, marginTop: '.9rem' }}>Built responsive, user-friendly interfaces using React.js, Vue.js, and Materialize CSS, collaborating with cross-functional teams to deliver polished web applications.</p>
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '.4rem', marginTop: '.9rem' }}>
-                    <span className="ptag" style={{ fontSize: '.62rem' }}>JavaScript</span><span className="ptag" style={{ fontSize: '.62rem' }}>React.js</span><span className="ptag" style={{ fontSize: '.62rem' }}>Vue.js</span><span className="ptag" style={{ fontSize: '.62rem' }}>Bootstrap</span>
+                    <span className="ptag" style={{ fontSize: '.62rem' }}>JavaScript</span><span className="ptag" style={{ fontSize: '.62rem' }}>Vue.js</span><span className="ptag" style={{ fontSize: '.62rem' }}>React.js</span><span className="ptag" style={{ fontSize: '.62rem' }}>Bootstrap</span><span className="ptag" style={{ fontSize: '.62rem' }}>MaterializeCSS</span>
                   </div>
                 </div>
 
