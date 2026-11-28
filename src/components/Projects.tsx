@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { PROJECTS } from '../data'
+import { PROJECTS, SITE } from '../data'
 import type { Project } from '../types'
 
 function formatIndex(i: number) {
@@ -89,12 +89,12 @@ export default function Projects() {
         <div className="projects-hero-inner reveal">
           <div className="sec-label">
             <span className="eyebrow-line" />
-            Work — Production &amp; Distributed Systems
+            Work
           </div>
           <h1 className="projects-title">Selected Projects</h1>
           <p className="projects-lead">
-            Production backends, distributed microservices, and full-stack applications — from
-            multi-tenant SaaS to high-throughput real-time systems.
+            Notification delivery for 3.5M+ users, payroll from mobile check-in, and portal filing
+            automation. Personal projects are labeled as such.
           </p>
         </div>
       </div>
@@ -109,19 +109,17 @@ export default function Projects() {
         <div className="projects-cta-copy">
           <div className="sec-label">
             <span className="eyebrow-line" />
-            Architecture Standards
+            Resume
           </div>
-          <h2 className="projects-cta-title">
-            Need scalable microservices or high-throughput APIs?
-          </h2>
+          <h2 className="projects-cta-title">The short version is one page.</h2>
           <p className="projects-cta-text">
-            Clean Architecture, event-driven design, and CI/CD that hold up under real production
-            load.
+            Backend engineer in Lahore (UTC+5), overlapping US Eastern mornings and Central European
+            workdays.
           </p>
         </div>
-        <Link to="/contact" className="btn-p projects-cta-btn">
-          Discuss Architecture →
-        </Link>
+        <a href={SITE.resume} className="btn-p projects-cta-btn" target="_blank" rel="noreferrer">
+          Download Resume →
+        </a>
       </div>
     </section>
   )

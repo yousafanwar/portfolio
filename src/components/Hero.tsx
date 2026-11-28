@@ -3,7 +3,6 @@ import { SITE } from '../data'
 
 export default function Hero() {
   return (
-    // trigger rerun
     <section className="hero" id="hero">
       <div className="hero-grid" aria-hidden="true" />
       <div className="hero-glow" aria-hidden="true" />
@@ -26,22 +25,18 @@ export default function Hero() {
         </p>
 
         <p className="hero-bio">
-          4+ years shipping secure, scalable systems in Django, NestJS, Next.js, and Node.js —
-          backends that hold up under load and serve <strong>3.5M+</strong> users in production.
+          Production APIs in Django, NestJS, and PostgreSQL. Notification delivery, reward
+          integrity, and real-time game events for a consumer rewards platform with{' '}
+          <strong>3.5M+</strong> users. I overlap US Eastern mornings and Central European workdays.
         </p>
 
         <div className="hero-btns">
-          <Link to="/contact" className="btn-p">
-            Get In Touch <span aria-hidden="true">→</span>
-          </Link>
-          <a
-            href={SITE.github}
-            className="btn-s"
-            target="_blank"
-            rel="noreferrer"
-          >
-            View Resume / GitHub
+          <a href={SITE.resume} className="btn-p" target="_blank" rel="noreferrer">
+            Download Resume <span aria-hidden="true">→</span>
           </a>
+          <Link to="/contact" className="btn-s">
+            Get In Touch
+          </Link>
         </div>
       </div>
     </section>

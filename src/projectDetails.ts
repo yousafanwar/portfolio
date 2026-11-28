@@ -38,15 +38,6 @@ import nook16 from './assets/nooktables/16-table-chat.jpeg'
 import nook17 from './assets/nooktables/17-notifications.jpeg'
 import nook18 from './assets/nooktables/18-profile.jpeg'
 
-function shots(id: string, captions: string[]): ProjectMedia[] {
-  return captions.map((caption, i) => ({
-    type: 'image' as const,
-    src: `https://picsum.photos/seed/${id}${i + 1}/1280/720`,
-    thumb: `https://picsum.photos/seed/${id}${i + 1}/480/270`,
-    caption,
-  }))
-}
-
 const ETMP_MEDIA: ProjectMedia[] = [
   { type: 'image', src: etmp01, caption: 'Dashboard — projects, metrics & urgent actions' },
   { type: 'image', src: etmp02, caption: 'Projects grid — status, progress & owners' },
@@ -58,16 +49,16 @@ const ETMP_MEDIA: ProjectMedia[] = [
 ]
 
 const MIRA_MEDIA: ProjectMedia[] = [
-  { type: 'image', src: mira01, caption: 'Lock hub — Cloud-Mining, RWA & Airdrop' },
-  { type: 'image', src: mira02, caption: 'Mining home — rate, team & daily rewards' },
-  { type: 'image', src: mira03, caption: 'Mining team — active & inactive members' },
-  { type: 'image', src: mira04, caption: 'Tokenization events feed' },
-  { type: 'image', src: mira05, caption: 'Games hub — Spin & Win + Unity titles' },
-  { type: 'image', src: mira06, caption: 'Daily Spin & Win rewards' },
-  { type: 'image', src: mira07, caption: 'Ecosystem companies gallery' },
-  { type: 'image', src: mira08, caption: 'News & community updates' },
   { type: 'image', src: mira09, caption: 'Notification center' },
-  { type: 'image', src: mira10, caption: 'Settings — KYC, team & $MRX' },
+  { type: 'image', src: mira10, caption: 'Settings — team and account' },
+  { type: 'image', src: mira05, caption: 'Games hub — Unity titles' },
+  { type: 'image', src: mira02, caption: 'Home — rate, team, and daily rewards' },
+  { type: 'image', src: mira03, caption: 'Team — active and inactive members' },
+  { type: 'image', src: mira06, caption: 'Daily rewards' },
+  { type: 'image', src: mira04, caption: 'Events feed' },
+  { type: 'image', src: mira08, caption: 'News and community updates' },
+  { type: 'image', src: mira07, caption: 'Ecosystem' },
+  { type: 'image', src: mira01, caption: 'Rewards hub' },
 ]
 
 const NOOKTABLES_MEDIA: ProjectMedia[] = [
@@ -94,11 +85,11 @@ const NOOKTABLES_MEDIA: ProjectMedia[] = [
 export const PROJECT_DETAILS_CONTENT: Record<DetailId, ProjectDetailContent> = {
   etmp: {
     id: 'etmp',
-    eyebrow: 'Full-Stack · Enterprise Platform',
+    eyebrow: 'Personal project · Task platform',
     title: 'ETMP',
     titleAccent: 'Enterprise Task Platform',
     tagline:
-      'Clean Architecture .NET API + React SPA — skills-based assignment, AI feedback→task intake, WhatsApp Cloud API, Docker & CI/CD.',
+      'Personal project. .NET API and React SPA — skill-based assignment, AI intake from free-text feedback, WhatsApp Cloud API, Docker, and CI.',
     tags: [
       'ASP.NET Core',
       '.NET 10',
@@ -292,35 +283,30 @@ export const PROJECT_DETAILS_CONTENT: Record<DetailId, ProjectDetailContent> = {
     //   href: 'https://aytraders.com/',
     // },
     gallery: false,
-    media: shots('ecp', [
-      'Storefront catalog (placeholder)',
-      'Product detail page (placeholder)',
-      'Cart & checkout (placeholder)',
-      'Admin product upload (placeholder)',
-    ]),
+    media: [],
   },
 
   authforge: {
     id: 'authforge',
-    eyebrow: 'Open Source · IAM / Security',
+    eyebrow: 'Personal project · Auth API',
     title: 'AuthForge',
     titleAccent: 'API',
     tagline:
-      'Production-grade NestJS + Prisma auth API — JWT, refresh rotation, RBAC, and full test coverage for drop-in SaaS auth.',
+      'Personal NestJS and Prisma auth API. JWT access tokens, rotating refresh tokens, and role checks.',
     tags: ['NestJS', 'TypeScript', 'Prisma', 'PostgreSQL', 'JWT', 'RBAC'],
     actions: [
       { label: 'Live Demo ↗', href: 'https://auth.aytraders.com/api/docs', primary: true },
       { label: 'View on GitHub', href: 'https://github.com/yousafanwar/AuthForge-API' },
     ],
     stats: [
-      { value: '100%', label: 'Test Coverage' },
-      { value: '3', label: 'Token Strategies' },
-      { value: 'RBAC', label: 'Permission System' },
+      { value: 'JWT', label: 'Access tokens' },
+      { value: 'Refresh', label: 'Rotating refresh tokens' },
+      { value: 'RBAC', label: 'Role checks' },
     ],
     overviewTitle: 'What is AuthForge?',
     overview: [
-      'A production-ready authentication microservice designed to drop into any NestJS project — so you can focus on the product.',
-      'Security-first: short-lived access tokens, rotating refresh tokens, and RBAC that controls what each role can touch.',
+      'A personal authentication API: short-lived access tokens, rotating refresh tokens, and role checks on NestJS routes.',
+      'Prisma and PostgreSQL hold users and tokens. The live docs are the Swagger page on auth.aytraders.com.',
     ],
     featuresTitle: 'Key Features',
     features: [
@@ -328,7 +314,7 @@ export const PROJECT_DETAILS_CONTENT: Record<DetailId, ProjectDetailContent> = {
       'Rotating refresh tokens with reuse detection (RTR)',
       'Role-Based Access Control with guard decorators',
       'Prisma + PostgreSQL — fully typed data layer',
-      'E2E and unit tests with Jest on critical paths',
+      'Jest tests around login, refresh, and role checks',
       'Helmet, rate limiting, and input validation baked in',
     ],
     sideTitle: 'Why These Choices?',
@@ -352,28 +338,23 @@ export const PROJECT_DETAILS_CONTENT: Record<DetailId, ProjectDetailContent> = {
     //   sub: 'Swagger UI · Interactive endpoints · Always on',
     //   href: 'https://auth.aytraders.com/api/docs',
     // },
-    gallery: false,
+    gallery: true,
     media: [
       {
         type: 'embed',
         src: 'https://www.loom.com/embed/9d04adce0c3044dea08c59f530ff89bc',
         caption: 'AuthForge demo walkthrough',
       },
-      ...shots('auth', [
-        'Swagger docs overview (placeholder)',
-        'Login & token flow (placeholder)',
-        'RBAC guard example (placeholder)',
-      ]),
     ],
   },
 
   mira: {
     id: 'mira',
-    eyebrow: 'Omnisoft · 3.5M+ Users',
+    eyebrow: 'Omnisoft · 3.5M+ users',
     title: 'Mirex',
     titleAccent: 'Network Backend',
     tagline:
-      'Real-time mining reward backend for 3.5M+ users — Django, PostgreSQL, Redis, FCM topics, and NestJS game events.',
+      'Consumer rewards backend for 3.5M+ users. FCM topic delivery, lazy inboxes, and reward caps enforced on the write path.',
     tags: ['Django', 'Python', 'PostgreSQL', 'Redis', 'BullMQ', 'Firebase FCM', 'NestJS'],
     badge: 'Proprietary — Omnisoft',
     actions: [
@@ -388,10 +369,10 @@ export const PROJECT_DETAILS_CONTENT: Record<DetailId, ProjectDetailContent> = {
       { value: 'FCM', label: 'Topic Notifications' },
       { value: 'Top 100', label: 'Game Leaderboards' },
     ],
-    overviewTitle: 'What is Mirex Network?',
+    overviewTitle: 'What I changed',
     overview: [
-      'Users mine virtual currency, join airdrops, earn referrals, and get real-time push on a Django backend built for high concurrency.',
-      'At Omnisoft I worked on notification delivery, inbox writes, staff permissions, ad-reward integrity, and the NestJS bridge that brings Unity games into the same ecosystem.',
+      'Mirex is a consumer rewards platform with 3.5M+ users. A broadcast used to look up every device token in PostgreSQL. It now publishes to FCM topics, after existing users were backfilled onto those topics.',
+      'Inbox rows are created when someone opens the inbox. Reward cooldowns live on the write that grants the reward, which closed a multi-device bypass, and a compounding video-ad boost was replaced with a linear rate. A NestJS service takes Unity game events, and BullMQ refreshes the top-100 leaderboard off the score-submit path.',
     ],
     featuresTitle: 'Contributions',
     features: [
@@ -472,12 +453,7 @@ export const PROJECT_DETAILS_CONTENT: Record<DetailId, ProjectDetailContent> = {
       { name: 'PostgreSQL', role: 'Database' },
     ],
     gallery: false,
-    media: shots('unity', [
-      'Leaderboard API response (placeholder)',
-      'Event lifecycle admin (placeholder)',
-      'Score update flow (placeholder)',
-      'Swagger endpoint list (placeholder)',
-    ]),
+    media: [],
   },
 
   sterlinggrey: {
@@ -527,12 +503,7 @@ export const PROJECT_DETAILS_CONTENT: Record<DetailId, ProjectDetailContent> = {
       { name: 'AWS SES', role: 'Email' },
     ],
     gallery: false,
-    media: shots('sterling', [
-      'Invoice PDF preview (placeholder)',
-      'Multi-company switcher (placeholder)',
-      'Subscription tiers (placeholder)',
-      'Stripe Connect onboarding (placeholder)',
-    ]),
+    media: [],
   },
 
   recruitme: {
@@ -540,31 +511,31 @@ export const PROJECT_DETAILS_CONTENT: Record<DetailId, ProjectDetailContent> = {
     eyebrow: 'MB Services · SaaS Workforce',
     title: 'RecruitMe',
     tagline:
-      'US staffing SaaS — 15+ microservices, 5k+ workers, automated payroll from mobile check-in/out. Up to 30% agency revenue lift.',
+      'US staffing product used by 50+ businesses and 5,000+ workers. Pay is calculated from mobile check-in and check-out.',
     tags: ['NestJS', 'Node.js', 'React.js', 'Vue.js', 'PostgreSQL', 'Apache Kafka', 'Redis'],
     badge: 'Proprietary — MB Services',
     actions: [],
     stats: [
-      { value: '15+', label: 'Microservices' },
-      { value: '5k+', label: 'Workers on Platform' },
-      { value: '30%', label: 'Revenue Increase' },
+      { value: '8 mo', label: 'First release' },
+      { value: '5,000+', label: 'Workers' },
+      { value: '50+', label: 'Businesses' },
     ],
     overviewTitle: 'What is RecruitMe?',
     overview: [
-      'SaaS for staffing agencies managing short-term event workers. Replaces manual outreach with automated job posting and self-assignment.',
-      'Built from scratch in an agile team of 5 over 8 months — agencies post jobs, workers get notified, mobile check-in/out auto-calculates pay.',
+      'A staffing product for US agencies. Agencies post jobs, workers pick them up, and pay is calculated from mobile check-in and check-out instead of manual timesheets.',
+      'I shipped the first release in eight months on a team of five. NestJS services sit on PostgreSQL. Kafka and Redis move work off the request path.',
     ],
-    featuresTitle: 'Key Features',
+    featuresTitle: 'What I built',
     features: [
-      'Salary from mobile check-in/out timestamps — no manual timesheets',
-      'Worker pools self-assign to posted jobs',
-      '15+ independently deployable domain services',
-      '50+ businesses and 5,000+ workers across the US',
-      'Vue.js and React.js clients on NestJS / Node.js APIs, with Kafka and Redis between services',
+      'Pay calculated from mobile check-in and check-out timestamps',
+      'Workers pick up posted jobs from a pool',
+      'NestJS services on PostgreSQL',
+      'Kafka and Redis move work off the request path',
+      'Used by 50+ businesses and 5,000+ workers',
     ],
-    sideTitle: 'Microservices',
+    sideTitle: 'Request path',
     sideText: [
-      'Each service owns auth, workers, jobs, scheduling, notifications, or payments — own DB connection and deploy lifecycle, HTTP contracts between services.',
+      'The API records check-in and check-out. Kafka and Redis carry the work that does not need to finish inside the HTTP request, including pay calculation and job alerts.',
     ],
     layers: [
       { name: 'Auth & Users', detail: 'Identity · Sessions', accent: true },
@@ -585,27 +556,22 @@ export const PROJECT_DETAILS_CONTENT: Record<DetailId, ProjectDetailContent> = {
       { name: 'MaterializeCSS', role: 'UI' },
     ],
     gallery: false,
-    media: shots('recruit', [
-      'Agency dashboard (placeholder)',
-      'Worker mobile check-in (placeholder)',
-      'Job posting board (placeholder)',
-      'Payroll summary (placeholder)',
-    ]),
+    media: [],
   },
 
   socialonehub: {
     id: 'socialonehub',
-    eyebrow: 'Freelance · Social SaaS',
+    eyebrow: 'Contract · Social publishing',
     title: 'SocialOneHub',
     tagline:
       'Social publishing SaaS — ASP.NET Core API, SQL Server, Hangfire jobs, SignalR updates, and a React/Next.js SPA.',
     tags: ['ASP.NET Core', 'C#', 'SQL Server', 'Hangfire', 'SignalR', 'React', 'Next.js', 'MUI'],
-    badge: 'Freelance — Client Project',
+    badge: 'Contract — Client Project',
     actions: [],
     stats: [
-      { value: '+40%', label: 'Media Search Efficiency' },
-      { value: '−25%', label: 'Load Time (Infinite Scroll)' },
-      { value: '4', label: 'Social Platforms' },
+      { value: 'Jobs', label: 'Hangfire publish queue' },
+      { value: 'Live', label: 'SignalR publish status' },
+      { value: '4', label: 'Social networks' },
     ],
     overviewTitle: 'What is SocialOneHub?',
     overview: [
@@ -614,9 +580,8 @@ export const PROJECT_DETAILS_CONTENT: Record<DetailId, ProjectDetailContent> = {
     ],
     featuresTitle: 'Contributions',
     features: [
-      'Pexels API stock search in-dashboard (+40% media workflow efficiency)',
-      'Infinite scroll feeds (−25% perceived load time)',
-      'Facebook/Instagram Graph API insights in the UI',
+      'Pexels search in the client',
+      'Facebook and Instagram insights via the Graph API',
       'Twitter OAuth login and post management',
       'Subscription-based access control with Hangfire background jobs',
       'SignalR updates for publishing status and analytics',
@@ -643,12 +608,7 @@ export const PROJECT_DETAILS_CONTENT: Record<DetailId, ProjectDetailContent> = {
       { name: 'MUI', role: 'Components' },
     ],
     gallery: false,
-    media: shots('social', [
-      'Unified social dashboard (placeholder)',
-      'Pexels media search (placeholder)',
-      'Insights charts (placeholder)',
-      'Composer & scheduling (placeholder)',
-    ]),
+    media: [],
   },
 
   aifiling: {
@@ -662,9 +622,9 @@ export const PROJECT_DETAILS_CONTENT: Record<DetailId, ProjectDetailContent> = {
     badge: 'Proprietary — Omnisoft',
     actions: [],
     stats: [
-      { value: 'OTA', label: 'Observe-Think-Act' },
-      { value: '2', label: 'Automation Paths' },
-      { value: 'PDF/CSV', label: 'Document Intake' },
+      { value: 'DOM', label: 'Playwright selectors first' },
+      { value: 'Vision', label: 'Fallback when the layout shifts' },
+      { value: 'Jobs', label: 'FastAPI status polling' },
     ],
     overviewTitle: 'What is the filing agent?',
     overview: [
@@ -673,8 +633,8 @@ export const PROJECT_DETAILS_CONTENT: Record<DetailId, ProjectDetailContent> = {
     ],
     featuresTitle: 'Contributions',
     features: [
-      'Observe-Think-Act loop around a vision-capable LLM',
-      'Hybrid automation — Playwright DOM selectors, then vision fallback',
+      'Playwright walks the portal with DOM selectors first',
+      'A vision model takes over when the layout changes',
       'FastAPI service with async job queuing and status polling',
       'NestJS API with JWT auth, RBAC, and rate limiting',
       'PDF/CSV parsing into structured payloads for the agent',
@@ -682,12 +642,12 @@ export const PROJECT_DETAILS_CONTENT: Record<DetailId, ProjectDetailContent> = {
     ],
     sideTitle: 'How a job runs',
     sideText: [
-      'The NestJS API accepts a document, extracts fields, and hands a structured payload to FastAPI. The agent observes the portal, acts with Playwright, and reports status back for polling.',
+      'The NestJS API accepts a document, extracts fields, and hands a structured payload to FastAPI. Playwright fills the form, and the job reports status for polling.',
     ],
     layers: [
       { name: 'NestJS API', detail: 'JWT · RBAC · PDF/CSV intake', accent: true },
       { name: 'FastAPI', detail: 'Job queue · Status polling' },
-      { name: 'Agent', detail: 'Observe · Think · Act' },
+      { name: 'Agent', detail: 'DOM selectors · Vision fallback' },
       { name: 'Playwright', detail: 'DOM first · Vision fallback' },
       { name: 'PostgreSQL', detail: 'Prisma · Users · Jobs' },
     ],
@@ -701,11 +661,6 @@ export const PROJECT_DETAILS_CONTENT: Record<DetailId, ProjectDetailContent> = {
       { name: 'PostgreSQL', role: 'Database' },
     ],
     gallery: false,
-    media: shots('aifiling', [
-      'Agent job status (placeholder)',
-      'Document intake (placeholder)',
-      'Portal automation step (placeholder)',
-      'Extracted payload (placeholder)',
-    ]),
+    media: [],
   },
 }

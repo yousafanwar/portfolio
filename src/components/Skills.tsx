@@ -1,12 +1,10 @@
 import { SKILLS } from '../data'
 
 const ICONS: Record<string, string> = {
-  'Languages & Frameworks': '⟨/⟩',
-  'Backend & Architecture': '⬡',
-  'AI & Automation': '◎',
-  'Task Queues & Messaging': '⇄',
-  'Database & Data Layer': '▣',
-  'Real-time, Security & DevOps': '⚙',
+  Languages: '⟨/⟩',
+  Backend: '⬡',
+  Delivery: '⇄',
+  'Also shipped': '▣',
 }
 
 export default function Skills() {
@@ -18,7 +16,7 @@ export default function Skills() {
             <span className="eyebrow-line" />
             Technical Proficiency
           </div>
-          <h2 className="sec-title">Skills &amp; Technology Stack</h2>
+          <h2 className="sec-title">Skills</h2>
         </div>
 
         <div className="skills-grid">
